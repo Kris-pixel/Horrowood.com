@@ -1,0 +1,42 @@
+.start-container {
+    height: 100%;
+  }
+  
+  .rating-wrapper {
+    align-self: center;
+    border-radius: 5rem;
+    display: inline-flex;
+    direction: rtl !important;
+    padding: 0.5rem 1.5rem;
+    margin-left: auto;
+  }
+  .rating-wrapper label {
+    color: #686883;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 2rem;
+    padding: 0.3rem 0.3rem;
+    transition: color 0.5s;
+  }
+  .rating-wrapper i {
+    filter: drop-shadow( 4px 2px 4px #35354dee);
+  }
+  .rating-wrapper input {
+    height: 100%;
+    width: 100%;
+  }
+  .rating-wrapper input {
+    display: none;
+  }
+  .rating-wrapper label.hoverable:hover,
+  .rating-wrapper label.hoverable:hover ~ label {
+    color: #FEB483;
+  }
+  .rating-wrapper input:checked ~ label{
+    color: #99FF33;
+  }
+
+  .item-mark{
+    font-family: 'Corbel';
+    font-size: 2rem;
+  }
