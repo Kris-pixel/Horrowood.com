@@ -4,6 +4,7 @@ if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 // var_dump($_GET);
 
 $action = $_GET['action'] != "bookCatalog"? 'f%' : 'k%';
+$item = $_GET['action'] == "bookCatalog"? "bookItem" : "filmItem";
 $type =( $_GET['type'])? "AND type_code ='".$_GET['type']."'" : '';
 $raiting = $_GET['raiting']? "AND rating = '".$_GET['raiting']."'" : '';
 $status = $_GET['status']? "AND satus_code ='".$_GET['status']."'" : '';

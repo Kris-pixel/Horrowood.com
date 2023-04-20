@@ -7,7 +7,3 @@ var animation = bodymovin.loadAnimation({
     name: "ghost-preloader", // Name for future reference. Optional.
   });
   animation.setSpeed(1.5);
-
-  $(window).on('load', function() {
-		$("#preloader").delay(400).fadeOut();
-  });

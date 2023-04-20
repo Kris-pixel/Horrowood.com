@@ -24,31 +24,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 
-    <title>Horrorwood</title>
+    <title>Horrorwood <?php $head= $_GET["action"]? '- '.$_GET["action"] : '';
+                            echo $head;?></title>
     </head>
 <body>
-    <div id='preloader'>
-        <div id='ghost-preloader'></div>
-    </div>
+    <?php include_once("views/preloader.php");?>
     <?php 
          if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 
         //  сюда подключать все нужные функции
         require_once('connect/db.php');
         require_once('functions/userFunc.php');
-        require_once('functions/itemFunc.php');
+        require_once('functions/itemFunc.php');?>
         
-        include ("views/header.php");
-        include ("views/pageContainer.php");
-        include ("views/footer.php"); 
-    ?>
+    <?php    include ("views/header.php");?>
+    <?php    include ("views/pageContainer.php");?>
+    <?php    include ("views/footer.php");?>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
     <script type="text/javascript" src="js/lottie.js"></script>
-    <script src="js/logo.js"></script>
-    <script src="js/welcomAnim.js"></script>
-    <script src="js/ghostAnim.js"></script>
+    <script type="text/javascript" src="js/logo.js"></script>
+    <script type="text/javascript" src="js/welcomAnim.js"></script>
+    <script type="text/javascript" src="js/ghostAnim.js"></script>
     <!-- <script src="js/customSelect.js"></script> -->
 </body>
 </html>

@@ -41,6 +41,7 @@
 
                 default:
                 include_once("404.php");
+                // include_once("pages/index.php");
                 break;
             }
           
