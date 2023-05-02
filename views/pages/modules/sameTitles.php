@@ -14,7 +14,7 @@ $findGenre = trim($findGenre,"', '");
 // в каком каталоге искать
     if($action == "bookItem")
     {
-        $catalog ='k';
+        $catalog ='b';
         $item="bookItem";
     }
     if($action == "filmItem")
@@ -27,7 +27,7 @@ $findGenre = trim($findGenre,"', '");
                 ON genre.genre_code = genre_names.code JOIN items
                 ON genre.id_item = items.id
                 WHERE id_item != '$id' 
-                AND type_code like '$catalog%'
+                AND id_item like '$catalog%'
                 AND genre_names.name IN ('$findGenre')
                 GROUP BY id_item
                 ORDER BY matches DESC
@@ -57,17 +57,4 @@ $findGenre = trim($findGenre,"', '");
     echo $result; 
 
  ?>
-
-                    <!-- <div class="same card col-md-6 mb-4">
-                        <a href="">
-                        <img src="Akira.webp" alt="">
-                        <div class="overlay"> <div class="text">Акира</div></div>
-                        </a>
-                    </div>
-                    <div class="same card col-md-6 ml-2 mb-4">
-                        <a href="">
-                        <img src="Akira.webp" alt="">
-                        <div class="overlay"> <div class="text">Акира</div></div>
-                        </a>
-                    </div> -->
                 </div> 

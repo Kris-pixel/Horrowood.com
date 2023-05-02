@@ -16,12 +16,16 @@
             <div class="col-6">
 
             <?php
-                if (!empty($_SESSION['login'])) {
+                if (!empty($_SESSION['login']) && $_SESSION['role'] != 1) {
 
                     echo "
-                            <a href='http://horrowood.com/index.php?action=user'>Личный кабинет</a>
+                            <a href='http://horrowood.com/index.php?action=user&page=film'>Личный кабинет</a>
                         ";
 
+                }else if(!empty($_SESSION['login']) && $_SESSION['role'] == 1){
+                    echo "
+                    <a href='http://horrowood.com/index.php?action=admin'>Панель администратора</a>
+                ";
                 }else{
                     echo "
                             <a href='http://horrowood.com/views/pages/login.php'>Вход</a>

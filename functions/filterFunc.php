@@ -3,7 +3,7 @@ require_once "../connect/db.php";
 if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 // var_dump($_GET);
 
-$action = $_GET['action'] != "bookCatalog"? 'f%' : 'k%';
+$action = $_GET['action'] != "bookCatalog"? 'f%' : 'b%';
 $item = $_GET['action'] == "bookCatalog"? "bookItem" : "filmItem";
 $type =( $_GET['type'])? "AND type_code ='".$_GET['type']."'" : '';
 $raiting = $_GET['raiting']? "AND rating = '".$_GET['raiting']."'" : '';
@@ -33,7 +33,7 @@ switch ($_GET['sort']) {
 
 $query = "SELECT DISTINCT items.id, title, img, date_rec_creation, release_date from items JOIN genre 
             ON items.id=genre.id_item 
-            WHERE type_code like'$action' 
+            WHERE items.id like'$action' 
             $type $raiting $status $year $genre
             ORDER BY $sort";
         // var_dump($query);

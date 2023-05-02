@@ -38,6 +38,18 @@
             case 'user':
                 include_once("pages/user.php");
                 break;
+            case 'admin':
+                include_once("pages/admin.php");
+                break;
+            case 'newArticle':
+                include_once("pages/admin/newArticle.php");
+                break;
+            case 'editArticle':
+                include_once("pages/admin/editArticle.php");
+                break;
+            case 'newItem':
+                include_once("pages/admin/newItem.php");
+                break;
 
                 default:
                 include_once("404.php");

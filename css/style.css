@@ -163,8 +163,9 @@ a.reg-but{
     padding: 7px;
     margin-left: 10px;
 }
-a.reg-but:hover{
+a.reg-but:hover, .goto-article:hover{
     background-color: #75e703;
+    text-decoration: none;
     box-shadow: none;
     color: #46465E;
 }
@@ -185,7 +186,7 @@ div.container{
 }
 
 
-.catalog div.card, div.card.col-md-12, .big-article{
+.catalog div.card, div.card.col-md-12{
     background: #46465E;
     box-shadow: -10px -10px 20px #585874, 
                 10px 10px 20px #39394F;
@@ -194,6 +195,25 @@ div.container{
     height: 230px;
     display: flex;
     justify-content: center;
+}
+.big-article{
+    background: #46465E;
+    box-shadow: -7px -7px 15px #585874, 
+                7px 7px 15px #39394F;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.big-article-img{
+    max-height: 350px;
+    overflow: hidden;
+    border-radius: 20px 20px 0px 0px;
+}
+.big-article-img img{
+    width: 100%;
+    height: auto;
+    transform: translateY(-10%);
 }
 .same.card{
     max-width: 9vw;
@@ -313,6 +333,7 @@ div.container{
     align-items: center;
     text-align: center;
     color: rgba(153, 255, 51, 0.5);
+    text-align: left;
 }
 
 .footer-nav div a:hover{
@@ -515,20 +536,23 @@ textarea.comment-text:active, textarea.comment-text:focus{
     border-radius: 20px;
 }
 .article-rounded-img{
-    height: 220px;
-    border-radius: 20px;
+    height: 210px;
+    border-radius: 20px 0px 0px 20px;
     overflow: hidden;
 }
 .article-rounded-img img{
     width: auto;
     height: 100%;
-    transform: translateX(-40%);
+    transform: translateX(-10%);
 }
 .module{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+.module:nth-child(3){
+    flex-direction: row-reverse;
 }
 
 
@@ -541,7 +565,6 @@ textarea.comment-text:active, textarea.comment-text:focus{
 }
 .stats:last-of-type{
     margin-top: 8vh;
-    opacity: 0.5;
 }
 .stats-row{
     min-width: 350px;
@@ -661,6 +684,11 @@ a{
     background-color: #39394F;
     border-radius: 20px;
 }
+.admin-dark-card{
+    background-color: #39394F;
+    border-radius: 20px 20px 0px 0px;
+    padding-bottom: 10px;
+}
 
 .breadcrump, .breadcrump a{
     text-decoration: none;
@@ -670,6 +698,12 @@ a{
 .breadcrump a:hover{
     color: #99FF33;
     text-decoration: none;
+}
+.breadcrump.del-admin-but a{
+    color: #ff3a3a;
+}
+td a.del:hover{
+color: #ff3a3a;
 }
 
 
@@ -740,4 +774,123 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.user-link{
+    opacity: 0.5;
+}
+.user-link:hover{
+    opacity: 1;
+    cursor:pointer;
+}
+
+
+/* editform */
+.editform{
+    background-color: #39394F;
+}
+.editform td form{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.editform td form div:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.editform td form div:last-child a{
+    color: #FEB483;
+}
+.editform td form div:last-child a:hover{
+    color: #FEB483;
+    text-decoration: line-through;
+    cursor: pointer;
+}
+.editform td form div input, .editform td form div select{
+    background-color: #585874;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 15px;
+}
+.editform{
+    display: none;
+  }
+  .show{
+    display: table-row;
+  }
+  table{
+    margin-left: 2%;
+    width: 97%;
+  }
+
+  .pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    padding: 5px 0px;
+    border-radius: 20px;
+    background-color: #39394F;
+    width: 25px;
+    margin: 0px 2px;
+    color: #99ff3370;
+  }
+  .pagination:hover{
+    color: #99FF33;
+    text-decoration: none;
+  }
+  .pagination-active{
+    color: #99FF33;
+  }
+
+  .input-file {
+	position: relative;
+	display: inline-block;
+}
+.bbutton.file-btn, .goto-article{
+    font-size: 16px;
+    padding: 3px 7px;
+    color: #39394F;
+    cursor: pointer;
+}
+.box-input input[type="file"]{
+    display:none;
+}
+.file-name{
+    font-family: 'Corbel';
+}
+div.trumbowyg-editor{
+    background-color: #ecf0f1;
+    color: #39394F;
+    font-family: 'Corbel';
+}
+
+.edit-article-img{
+    width: 27%;
+    height: auto;
+}
+.edit-title-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.article-info.edit-title-div:last-child{
+    align-items: end;
+}
+span[class^="er-"]{
+    color: #FEB483;
+    font-family: 'Corbel';
+    font-size: 12px;
+}
+
+.newitem-form .box-input{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
 }

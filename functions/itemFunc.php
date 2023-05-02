@@ -4,12 +4,12 @@ function RenderCardCatalog ($link, $action){
 
     if($action == "bookCatalog")
     {
-        $query ="SELECT id, title, img from items WHERE type_code like 'k%';";
+        $query ="SELECT id, title, img from items WHERE id like 'b%';";
         $item="bookItem";
     }
     if($action == "filmCatalog")
     {
-        $query = "SELECT id, title, img from items WHERE type_code like 'f%'";
+        $query = "SELECT id, title, img from items WHERE id like 'f%'";
         $item="filmItem";
     }
 
@@ -132,7 +132,7 @@ function GetNewOrPopItems($link, $newOrPop){
         $arrname[] = $row['title'];
         $arrimg[] = $row['img'];
         $arrid[] = $row['id'];
-        $type = substr($row['type_code'],0,1) == 'f' ? "filmItem" : "bookItem";
+        $type = substr($row['id'],0,1) == 'f' ? "filmItem" : "bookItem";
     }
 
     for ($i=0; $i < count($arrname); $i++) { 

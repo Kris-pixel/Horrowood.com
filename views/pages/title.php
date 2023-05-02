@@ -21,6 +21,9 @@ if($action == "filmItem")
 $id= $_GET['id'];
 $_SESSION['item_id'] = $id;
 $item = GetItemById($link, $id);
+if ($item == 0) {
+    echo "<script>location.href='http://horrowood.com/index.php?action=404';</script>";
+}
 $genres = GetItemGanresById($link, $id);
 $frames = GetItemFramesById($link, $id);
 ?>
