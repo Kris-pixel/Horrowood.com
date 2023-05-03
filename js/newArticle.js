@@ -1,24 +1,21 @@
+let coverFiles;
 
-
-    $('.bbutton.comment-button.file-btn').on( "click", function() {
+   $('.bbutton.comment-button.file-btn').on( "click", function() {
        $('input[type=file]').trigger('click');
     });
     $('input[type=file]').on('change', function() {
-        let file = this.files[0].name;
-        $('label.file-name').text(file);
+        let file = this.files;
+        coverFiles = file;
+        $('label.file-name').text(file[0].name);
     });
 
    $(document).on('click', 'input[name=submit]', function(){
-        $('.er-title').text("");
-        $('.er-text').text("");
-        $('.er-topic').text("");
-        $('.er-img').text("");
+    $('span[class^="er-"]').text('');
 
         let title = $("input[name=title]").val();
         let text = $("textarea[name=description]").val();
         let topic = $("input[name=topic]").val();
-        // let img = $("input[type=file]")[0].files[0].name;
-        let img = $("input[type=file]")[0].files.lenth;
+        let img = $("input[name=img]").val();
         let imgName;
 
         if(!title){
@@ -39,7 +36,7 @@
             var data = new FormData();
 
             // заполняем объект данных файлами в подходящем для отправки формате
-            $.each( img, function( key, value ){
+            $.each( coverFiles, function( key, value ){
                 data.append( key, value );
             });
             data.append( 'title', title );
@@ -58,7 +55,7 @@
                 success:function(data)
                 {
                     console.log('here');
-                   location.href='http://horrowood.com/index.php?action=admin';
+                   location.href='http://horrowood.com/index.php?action=admin&tab=Article&page=1';
                 }
                 });
         }

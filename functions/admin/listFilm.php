@@ -61,7 +61,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
     <tr>
         <td><?=@$id;?></td>
-        <td><a href="http://horrowood.com/index.php?action=article&id=<?=@$id;?>"><?php echo substr($title, 0, 50); ?></a></td>
+        <td><a href="http://horrowood.com/index.php?action=filmItem&id=<?=@$id;?>"><?php echo substr($title, 0, 50); ?></a></td>
         <td><?=@$type;?></td>
         <td><?=@$status;?></td>
         <td><?=@$country;?></td>

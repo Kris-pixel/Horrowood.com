@@ -48,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION['login'] = $row['login']; 
               $_SESSION['role'] = $row['role']; 
               print "<script language='Javascript' type='text/javascript'>
-              window.location.href = 'http://horrowood.com/';
+              window.location.href = '".$_SESSION['url']."';
               </script>";
           }
           else {

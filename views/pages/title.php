@@ -69,9 +69,9 @@ $frames = GetItemFramesById($link, $id);
                 </div>
                 <div class="col-md-12 dark-card" style="<?=@$hide;?>"> <h4>Кадры</h4></div>
                 <div class="frame-row mx-2" style="<?=@$hide;?>">
-                    <img src="http://horrowood.com/img/db/frames/<?=@$frames[0];?>" alt="<?=@$frames[0];?>" title="<?=@$frames[0];?>">
-                    <img src="http://horrowood.com/img/db/frames/<?=@$frames[1];?>" alt="<?=@$frames[1];?>" title="<?=@$frames[1];?>">
-                    <img src="http://horrowood.com/img/db/frames/<?=@$frames[2];?>" alt="<?=@$frames[2];?>" title="<?=@$frames[2];?>">
+                    <img src="http://horrowood.com/img/db/items/<?=@$frames[0];?>" alt="<?=@$frames[0];?>" title="<?=@$frames[0];?>">
+                    <img src="http://horrowood.com/img/db/items/<?=@$frames[1];?>" alt="<?=@$frames[1];?>" title="<?=@$frames[1];?>">
+                    <img src="http://horrowood.com/img/db/items/<?=@$frames[2];?>" alt="<?=@$frames[2];?>" title="<?=@$frames[2];?>">
                 </div>
             </div>
 
@@ -95,3 +95,7 @@ $frames = GetItemFramesById($link, $id);
             </div>
 
         </div>
+
+        <?php
+$_SESSION['url'] = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ;
+?>

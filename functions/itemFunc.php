@@ -116,7 +116,7 @@ function GetUserRaitingStars($link, $id){
 
 function GetNewOrPopItems($link, $newOrPop){
     if($newOrPop){
-        $query = "SELECT id, title, img, type_code from items ORDER BY $newOrPop LIMIT 8";
+        $query = "SELECT * from items ORDER BY date_rec_creation DESC LIMIT 8";
     }else{
         $query = "SELECT id, title, img,type_code,( SELECT AVG(mark) AS m from lists WHERE lists.id_item = items.id) as m from items ORDER BY m DESC LIMIT 8";
     }

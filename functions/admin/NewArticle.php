@@ -36,5 +36,4 @@ if (isset($_POST)) {
     $rez = mysqli_query($link, $query)or die("Ошибка " . mysqli_error($link));
     // var_dump($rez);
     die( json_encode( $data ) );
-    return 1;
 }

@@ -26,6 +26,7 @@
                         <label class="form-label">Рейтинг:</label>
                         <select id="raiting" class="dropdown" placeholder="пожалуйста выберите">
                             <option value="0">любой</option>
+                            <option value="PG-13">PG-13</option>
                             <option value="R">R</option>
                             <option value="R-17">R-17</option>
                         </select>

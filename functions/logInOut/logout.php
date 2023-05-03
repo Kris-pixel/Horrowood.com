@@ -5,6 +5,6 @@
     $_SESSION['status']='';
     session_destroy();
     print "<script language='Javascript' type='text/javascript'>
-    window.location.href = 'http://horrowood.com/';
+    window.location.href = '".$_SESSION['url']."';
     </script>";
 ?>

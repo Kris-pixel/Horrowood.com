@@ -297,6 +297,11 @@ div.container{
 .twocorner-img{
     border-radius: 20px 20px 0px 0px;
     width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+.twocorner-img img{
+    width: 100%;
     height: auto;
 }
 
@@ -641,7 +646,7 @@ html body{
     border-radius: 50px;
 }
 
-.input-shadow{
+.input-shadow, .newitem-form .box-input input[type="number"]{
     padding-left: 25px;
     padding-right: 25px;
     background: #575772;

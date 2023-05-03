@@ -13,6 +13,9 @@
         }else{
             echo " <link rel='stylesheet' href='css/customSelect.css'>";
         }
+        if($_GET['action'] == "newItem"){
+            echo " <link rel='stylesheet' href='css/multipleSelect.css'>";
+        }
     ?>
     <link rel="stylesheet" href="css/stars.css">
 

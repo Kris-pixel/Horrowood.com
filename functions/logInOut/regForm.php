@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               // выводим уведомление об успехе операции и перезагружаем страничку 
               print "<script language='Javascript' type='text/javascript'> 
               alert ('Вы успешно зарегистрировались! Спасибо!');
-              window.location.href = 'http://horrowood.com/';
+              window.location.href = '".$_SESSION['url']."';
               </script>"; 
               $data = "Registration succeed ".$tm."\n";
               file_put_contents('data/log.txt',$data,FILE_APPEND);
