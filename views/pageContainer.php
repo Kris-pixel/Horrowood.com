@@ -50,6 +50,9 @@
             case 'newItem':
                 include_once("pages/admin/newItem.php");
                 break;
+            case 'search':
+                include_once("pages/searchResult.php");
+                break;
 
                 default:
                 include_once("404.php");

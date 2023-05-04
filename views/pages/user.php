@@ -6,7 +6,7 @@ $reg = date_format($reg, 'd.m.Y');
 ?>
 <div class="W-100 dark-card row m-0">
     <div class="col-md-3 p-3">
-        <img class="ava" src= "http://horrowood.com/img/db/users/<?=@$img;?>" alt="<?=@$img;?>" title="<?=@$img;?>">
+        <div id="ava"></div>
     </div>
     <div class="col-md-8">
         <h1><?=@$login;?></h1>
@@ -31,11 +31,10 @@ $reg = date_format($reg, 'd.m.Y');
             </div>
                
         </div>
-        <div class="stats">
+        <div class="stats col-md-8 mb-0">
             <h4 id="film" class="user-link">Список фильмов</h4>
             <h4 id="book" class="user-link">Список книг</h4>
             <h4 id="like" class="user-link">Избранное</h4>
-            <h4 id="achiv" class="user-link">Достижения</h4>
         </div>
     </div>
 </div>

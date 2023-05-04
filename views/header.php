@@ -7,12 +7,15 @@
             <div id="logoAnim"></div>
         </a>
 
-        <form class="search-panel">
-            <fieldset class="input-shadow input-search">
-            <input class=" input-search" type="text" placeholder="Поиск...">
-            <input class="button-search" type="submit">
+        <div class='search-div'>
+        <form class="search-panel m-0" action="http://horrowood.com/index.php">
+            <fieldset class="input-shadow">
+                <input type="hidden" value="search" name="action">
+                <input class=" input-search" type="text" placeholder="Поиск..." id='input-search' name="find">
+                <input class="button-search" type="submit" id='search-submit'>
             </fieldset>
         </form>
+        </div>
 
         <div class="nav-container">
             <a class="nav-item article" href="http://horrowood.com/index.php?action=articles&page=1">Статьи</a>
@@ -112,3 +115,11 @@
         </div>
 
     </nav>
+
+    <div id="Search">
+            <table id="SearchTable">
+                <tbody id="txtHint">
+                </tbody>
+            </table>
+        </div>
+        <script type="text/javascript" src="js/search.js"></script>

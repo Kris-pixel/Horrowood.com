@@ -50,6 +50,6 @@
     <script type="text/javascript" src="js/logo.js"></script>
     <script type="text/javascript" src="js/welcomAnim.js"></script>
     <script type="text/javascript" src="js/ghostAnim.js"></script>
-    <!-- <script src="js/customSelect.js"></script> -->
+    <script src="js/userAnim.js"></script>
 </body>
 </html>
