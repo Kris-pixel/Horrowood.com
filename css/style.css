@@ -941,3 +941,8 @@ span[class^="er-"]{
     justify-content: space-between;
     align-items: start;
 }
+
+#heart:hover{
+    cursor: pointer;
+    filter:saturate(3);
+}

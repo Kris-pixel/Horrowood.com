@@ -26,7 +26,7 @@ $_SESSION['item_id'] = $id;
 ?>
         <div class="col-md-12 mt-1 mb-3">
             <p class="breadcrump"> <a href="http://horrowood.com/index.php?action=articles&page=1">Статьи</a> / 
-            <a href="http://horrowood.com/index.php?action=articles&page=<?=@$id;?>"><?=@$title;?></a></a></p>
+            <a href="http://horrowood.com/index.php?action=article&id=<?=@$id;?>"><?=@$title;?></a></a></p>
         </div>
 
         <div  class="col-md-12 row">
@@ -40,11 +40,23 @@ $_SESSION['item_id'] = $id;
             <p class="reading-text">
                 <?=@$description;?>
             </p>
-
+        <div id="reload"> 
             <div class="col-md-12 article-bottom">
                 <h5 id="articleTag" class="dark-card py-2 px-3"><?=@$topic;?></h5>
-                <img id="heart" src="heart.svg" alt="">
+                <?php
+                    $query = "SELECT * FROM likes WHERE id_item = '$id' AND id_user = '".$_SESSION['id']."'"; 
+                    $res = mysqli_query($link, $query);
+                    $row = mysqli_fetch_assoc($res);
+
+                    if($row){
+                        $src='img/icons/like.png';
+                    }else{
+                        $src='img/icons/unlike.png';
+                    }
+                ?>
+               <img id='heart' src='<?=@$src;?>' alt='сердечко'>
             </div>
+                </div>
 
             <?php
             if (isset($_SESSION['login']) && $_SESSION['role']==1) {
@@ -79,7 +91,7 @@ $_SESSION['item_id'] = $id;
 <?php
 $_SESSION['url'] = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'] ;
 ?>
-
+<script src="js/like.js"></script>
 
 
 

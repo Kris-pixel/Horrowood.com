@@ -4,8 +4,7 @@ $(document).ready(function(){
     let hintX = hintPos.left;
     let hintY = hintPos.top;
     let hintHeight = Number($('form.search-panel').css('height').slice(0,-2));
-    console.log(hintWidth);
-    console.log(hintY + hintHeight);
+
 
     $('#Search').css('width', hintWidth);
     $('#Search').css('left', hintX);

@@ -50,8 +50,6 @@
                                     <a href='http://horrowood.com/index.php?action=user&page=book'>Список книг</a>
                                     <a href='http://horrowood.com/index.php?action=user&page=like'>Избранное</a>
                                     <hr>
-                                    <a href='http://horrowood.com/index.php?action=user&page=achiv'>Достижения</a>
-                                    <hr>
                                     <a href='http://horrowood.com/index.php?action=logout'>Выход</a>
                                 </div>
                             </div>

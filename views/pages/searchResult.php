@@ -36,6 +36,7 @@ function SearchTable($table, $itemType, $search, $link){
     $arrname = [];
     $arrimg = [];
     $arrlink = [];
+    $arrtext = [];
     $result = '';
 
     $rez = mysqli_query($link, $query)or die("Ошибка " . mysqli_error($link)); 
@@ -43,6 +44,7 @@ function SearchTable($table, $itemType, $search, $link){
         $arrname[] = $table == "article" ? $row['title'] : $row['title']." / ". $row['orig_title'];
         $arrlink[] = "http://horrowood.com/index.php?action=$action&id=".$row['id'];
         $arrimg[] = $row['img'];
+        $arrtext[] = $row['body'];
     }
 
     if(count($arrname) && $table !='article'){
@@ -50,7 +52,6 @@ function SearchTable($table, $itemType, $search, $link){
         <div class='row'>
     <div class='col-md-12 row catalog justify-content-start'>";
         for ($i=0; $i < count($arrname); $i++) { 
-            for ($i=0; $i < count($arrname); $i++) { 
                 $result .=  "  <div class='card col-md-2 mb-4 mx-2'>
                                     <a href='".$arrlink[$i]."'>
                                         <img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
@@ -60,7 +61,6 @@ function SearchTable($table, $itemType, $search, $link){
             }
             
                 echo $result; 
-        }
         echo "</div></div>";
     }
     if(count($arrname) && $table =='article'){
@@ -68,18 +68,23 @@ function SearchTable($table, $itemType, $search, $link){
         <div class=''>
     <div class='col-md-12 justify-content-start'>";
         for ($i=0; $i < count($arrname); $i++) { 
-            for ($i=0; $i < count($arrname); $i++) { 
-                $result .=  "  <div class='card col-md-9 mb-4 mx-2'>
-                                    <a class='row' href='".$arrlink[$i]."'>
-                                        <img class='col-md-3' src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
-                                        <div class = 'col-md-7'><h4>".$arrname[$i]."</h4></div>
-                                        <div class='overlay'> <div class='text'></div></div>
-                                    </a>
-                                </div>";
+                $str = substr($arrtext[$i], 0, 229).'...';
+                $result .=  "<div class='dark-article-card mb-4'>
+                        <a class='catalog-article-link dark-article-layout' href='".$arrlink[$i]."'>
+                            <div class='col-md-6 p-0 article-rounded-img'>
+                                <img src='http://horrowood.com/img/db/article/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
+                            </div>
+                            <div class='col-md-6'>
+                            <h6 class='link-article-title'>".$arrname[$i]."</h6>
+                            <p class='reading-text'>$str
+                            </p>
+                            <p class='breadcrump'>Читать дельше...</p>
+                            </div>
+                        </a>
+                    </div>";
             }
             
                 echo $result; 
-        }
         echo "</div></div>";
     }
 }
