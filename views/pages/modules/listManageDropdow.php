@@ -37,17 +37,22 @@ switch ($cheked['k']) {
 }
 ?>
 
-<form action="">
+<form id="lists">
     <select id="listButton" class="dropdown" placeholder="Добавить в список">
-        <option <?=@$cheked0;?>>Добавить в список</option>
-        <option <?=@$chekeds;?>><?=@$wname?></option>
-        <option <?=@$chekedw;?>><?=@$donename?></option>
-        <option <?=@$chekedp;?>>Запланировано</option>
-        <option <?=@$chekedt;?>>Брошено</option>
-        <option>Удалить из списка</option>
+        <option <?=@$cheked0;?> value='empty'>Добавить в список</option>
+        <option <?=@$chekeds;?> value='s'><?=@$wname?></option>
+        <option <?=@$chekedw;?> value='w'><?=@$donename?></option>
+        <option <?=@$chekedp;?> value='p'>Запланировано</option>
+        <option <?=@$chekedt;?> value='t'>Брошено</option>
+        <option value='dlt'>Удалить из списка</option>
     </select>
 </form>
 
 
 <script src="js/customSelect.js"></script>
 <script src="js/listLinks.js"></script>
+<style>
+    #lists div ul li#empty{
+        display: none;
+    }
+</style>

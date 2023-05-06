@@ -283,7 +283,7 @@ div.container{
     border-radius: 20px;
   }
   
-  .overlay:hover{
+  .card a:hover .overlay{
     opacity: 1;
   }
   
@@ -334,6 +334,9 @@ div.container{
 }
 .card a:hover{
     text-decoration: none;
+}
+.card a{
+    display: block;
 }
 
 .twocorner-img{

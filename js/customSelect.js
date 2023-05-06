@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
 $('select.dropdown').each(function() {
 
     var dropdown = $('<div />').addClass('dropdown selectDropdown');
@@ -9,7 +10,8 @@ $('select.dropdown').each(function() {
     var list = $('<ul />');
 
     $(this).find('option').each(function() {
-        list.append($('<li />').append($('<a />').text($(this).text())));
+        let value = $(this).attr("value");
+        list.append($('<li id="'+value +'"  />').append($('<a />').text($(this).text())));
     });
 
     list.insertAfter($(this));
@@ -55,3 +57,5 @@ $(document).on('click touch', function(e) {
 });
 
 });
+
+

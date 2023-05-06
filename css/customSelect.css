@@ -88,8 +88,8 @@
     position: relative;
     transition: all 0.3s ease;
   }
-  .dropdown ul li a:hover {
-    color: var(--listTextActive);
+  .dropdown ul li:not(.active) a:hover {
+    color: #575772;
     background: var(--listActive);
   }
   .dropdown ul li.active a {

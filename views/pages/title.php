@@ -26,6 +26,9 @@ if ($item == 0) {
 }
 $genres = GetItemGanresById($link, $id);
 $frames = GetItemFramesById($link, $id);
+
+$date = date_create($item['release_date']);
+$itemDate = date_format($date,'d-m-Y');
 ?>
 
 
@@ -58,8 +61,8 @@ $frames = GetItemFramesById($link, $id);
                     <p class="reading-text">Оригинальное название: <?=@$item['orig_title'];?></p>
                     <p class="reading-text">Страна: <?=@$item['country'];?></p>
                     <p class="reading-text">Тип:  <?=@$item['name'];?></p>
-                    <p class="reading-text">Дата выпуска: <?=@$item['release_date'];?></p>
-                    <p class="reading-text"><?=@$amount;?>: <?=@$item['episode_amount'];?></p>
+                    <p class="reading-text">Дата выпуска: <?=@$itemDate;?></p>
+                    <p id="<?=@$item['episode_amount'];?>" class="reading-text ep-amount"><?=@$amount;?>: <?=@$item['episode_amount'];?></p>
                     <p class="reading-text"><?=@$amount2;?>: <?=@$item['duration'];?> <?=@$time;?></p>
                     <p class="reading-text">Статус: <?=@$item['status_name'];?></p>
                     <p class="reading-text">Возрастной рейтинг: <?=@$item['rating'];?></p>
