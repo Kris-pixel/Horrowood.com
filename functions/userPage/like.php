@@ -26,10 +26,10 @@ for ($i=0; $i < count($arrname); $i++) {
     $str = substr($arrtext[$i], 0, 229).'...';
     $result .=  "   <div class='dark-article-card mb-4'>
                         <a class='catalog-article-link dark-article-layout' href='http://horrowood.com/index.php?action=article&id=".$arrid[$i]."'>
-                            <div class='col-md-6 p-0 article-rounded-img'>
+                            <div class='col-md-3 p-0 article-rounded-img'>
                                 <img src='http://horrowood.com/img/db/article/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
                             </div>
-                            <div class='col-md-6'>
+                            <div class='col-md-10'>
                             <h6 class='link-article-title'>".$arrname[$i]."</h6>
                             <p class='reading-text'>$str
                             </p>

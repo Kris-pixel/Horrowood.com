@@ -27,19 +27,16 @@ body{
     min-height: 100px;
 }
 form{
-    display: flex;
-    flex-direction: column;
-    margin: 15px 40px 70px 40px;
-    margin-top: 30px;
+    margin: 0px 40px 50px 40px;;
 }
 div.box-input{
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
     
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .form-name{
     margin-top: 42px;
@@ -49,13 +46,16 @@ div.box-input{
     line-height: 37px;
 }
 .form-label{
-    width: 79px;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 260px;
     padding-right: 9px;
     font-family: 'Corbel';
-    font-style: normal;
-    font-weight: 400;
     font-size: 16px;
-    line-height: 19px;
+}
+.form-label.pas{
+    flex-direction: column;
 }
 .input{
     min-width: 185px;

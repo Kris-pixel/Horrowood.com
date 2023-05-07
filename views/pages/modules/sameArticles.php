@@ -17,7 +17,7 @@
     for ($i=0; $i < count($arrname); $i++) { 
         $result .=  "<div class='dark-card col-md-12 p-2 mb-3'>
                         <a href='http://horrowood.com/index.php?action=article&id=".$arrid[$i]."'>
-                            <img class='col-md-12 p-0 twocorner-img' src='http://horrowood.com/img/db/article/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
+                            <div class='col-md-12 p-0 twocorner-img'><img  src='http://horrowood.com/img/db/article/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                             <div class='same-article-title'>".$arrname[$i]."</div>
                             <div class='overlay'></div>
                         </a>
@@ -27,26 +27,3 @@
     echo $result; 
 
  ?>
-
-
-<!-- <div class="dark-card col-md-12 p-2 mb-3">
-    <a href="">
-        <img class="col-md-12 p-0 twocorner-img" src="horrorwood.jpg" alt="">
-        <div class="same-article-title">Название статьиНазвание статьи Название статьи</div>
-        <div class="overlay"> </div>
-    </a>
-</div>
-<div class="dark-card col-md-12 p-2 mb-3">
-    <a href="">
-        <img class="col-md-12 p-0 twocorner-img" src="cover.jpg" alt="">
-        <div class="same-article-title">Название статьиНазвание статьи Название статьи</div>
-        <div class="overlay"> </div>
-    </a>
-</div>
-<div class="dark-card col-md-12 p-2 mb-3">
-    <a href="">
-        <img class="col-md-12 p-0 twocorner-img" src="horrorwood.jpg" alt="">
-        <div class="same-article-title">Название статьиНазвание статьи Название статьи</div>
-        <div class="overlay"> </div>
-    </a>
-</div> -->

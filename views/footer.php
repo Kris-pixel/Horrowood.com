@@ -33,9 +33,6 @@
                         ";
                 }
             ?>
-                <!-- <a href="">Личный кабинет</a> -->
-                <!-- <a href="http://horrowood.com/views/pages/login.php">Вход</a>
-                <a href="http://horrowood.com/views/pages/signup.php">Регистрация</a> -->
             </div>
             <div class="col-12 fanhint">Создано фанатом для фанатов, 2023 г.</div>
         </div>

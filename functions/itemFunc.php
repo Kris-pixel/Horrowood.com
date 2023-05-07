@@ -27,9 +27,9 @@ function RenderCardCatalog ($link, $action){
     }
 
     for ($i=0; $i < count($arrname); $i++) { 
-        $result .=  "  <div class='card col-md-2 mb-4 mx-2'>
+        $result .=  "  <div class='card col-md-2 mb-4 ml-2 mr-3'>
                             <a href='http://horrowood.com/index.php?action=$item&id=".$arrid[$i]."'>
-                                <img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
+                                <div class='card-div-img'><img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                                 <div class='overlay'> <div class='text'>".$arrname[$i]."</div></div>
                             </a>
                         </div>";
@@ -138,7 +138,7 @@ function GetNewOrPopItems($link, $newOrPop){
     for ($i=0; $i < count($arrname); $i++) { 
         $result .=  "  <div class='card'>
                             <a href='http://horrowood.com/index.php?action=$type&id=".$arrid[$i]."'>
-                                <img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
+                                <div class='card-div-img'><img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                                 <div class='overlay'> <div class='text'>".$arrname[$i]."</div></div>
                             </a>
                         </div>";

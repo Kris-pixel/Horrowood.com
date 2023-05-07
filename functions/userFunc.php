@@ -29,13 +29,14 @@ function CountItems($link, $code){
 
 function CountTime($link){
     $id = $_SESSION['id'];
-    $query = "SELECT DISTINCT ((SELECT COUNT(duration)*25 as c FROM items JOIN lists
+    $query = "SELECT DISTINCT ((SELECT SUM(w_amount * 25) as sum FROM items JOIN lists
                 ON items.id = lists.id_item
-                WHERE id_user ='$id' AND type_code like 'k%') +
-            (SELECT COUNT(duration) FROM items JOIN lists
+                WHERE id_user ='$id' AND items.id like 'b%') +
+              (SELECT SUM(duration * w_amount) as sum FROM items JOIN lists
                 ON items.id = lists.id_item
-                WHERE id_user ='$id' AND type_code like 'f%') ) as c
-            FROM items";
+                WHERE id_user ='$id' AND items.id like 'f%') ) as c
+              FROM items";
+
     $rez = mysqli_query($link, $query)or die("Ошибка " . mysqli_error($link)); 
     $row = mysqli_fetch_assoc($rez);
     return $row['c'];
@@ -149,7 +150,7 @@ function getTable($link, $listType, $rowcount, $itemType){
           <input class='input' type='number' name='mark' min='1' max='5' value='$markForm'>
         </div>
         <div class='episod-div'>
-          <label for='wctd'>Просмотрено:</label>
+          <label for='wctd'>$selectTextW:</label>
           <input class='input' type='number' id='wctd' name='wctd' min='0' max='$arrepisoddes[$i]' value='$arrwatched[$i]'>
           <label for='pwd'> из $arrepisoddes[$i]</label>
         </div>

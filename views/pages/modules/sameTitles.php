@@ -22,7 +22,6 @@ $findGenre = trim($findGenre,"', '");
         $catalog = 'f';
         $item="filmItem";
     }
-
     $query = "SELECT  genre.id_item, count(genre_names.name) AS matches, title, img  FROM genre JOIN genre_names 
                 ON genre.genre_code = genre_names.code JOIN items
                 ON genre.id_item = items.id
@@ -46,9 +45,9 @@ $findGenre = trim($findGenre,"', '");
     }
 
     for ($i=0; $i < count($arrname); $i++) { 
-        $result .=  "  <div class='same card mb-4'>
+        $result .=  "  <div class='same card mb-3'>
                             <a href='http://horrowood.com/index.php?action=$action&id=".$arrid[$i]."'>
-                                <img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
+                                <div class='samecard-div-img'><img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                                 <div class='overlay'> <div class='text'>".$arrname[$i]."</div></div>
                             </a>
                         </div>";

@@ -12,32 +12,16 @@
 if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $eEn = $e1 = $e2 = "";
-
-
-    if(empty($_POST['login'])){
-      $e1 = "заполните поле";
-    }else{
-      $login = test_input($_POST['login']);
-    }
-
-    if(empty($_POST['password'])){
-      $e2 = "заполните поле";
-    }
-
-  $eEn=$e1.$e2;
-
-  if($eEn==""){
-    if(isset($_POST["password"])){
+    if(isset($_POST)){
+      $login =mysqli_real_escape_string($link, $_POST['login']);
 
       $query="SELECT * FROM user WHERE login ='$login'";
       $rez = mysqli_query($link, $query); 
       $row = mysqli_fetch_assoc($rez);
-      if (count($row) == 0)
+      if (!$row)
       {
           mysqli_close($link);
-          $e1 .='Такого логина не существует!';
+          echo 'Логина не существует!';
       }
       else {
         $password = test_input($_POST['password']);
@@ -47,19 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               $_SESSION['id'] = $row['id']; 
               $_SESSION['login'] = $row['login']; 
               $_SESSION['role'] = $row['role']; 
-              print "<script language='Javascript' type='text/javascript'>
-              window.location.href = '".$_SESSION['url']."';
-              </script>";
+              echo "";
           }
           else {
-              print "<script language='Javascript' type='text/javascript'>
-              alert ('Вы ввели не верные данные!');
-              </script>";
+              echo "неверный пароль";
           }
           mysqli_close($link);
       }
     }
-  }
-
-}
   ?>

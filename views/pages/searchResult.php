@@ -49,24 +49,23 @@ function SearchTable($table, $itemType, $search, $link){
 
     if(count($arrname) && $table !='article'){
         echo "<h2>$h2</h2>
-        <div class='row'>
-    <div class='col-md-12 row catalog justify-content-start'>";
+        <div class='catalog pt-0'>";
         for ($i=0; $i < count($arrname); $i++) { 
-                $result .=  "  <div class='card col-md-2 mb-4 mx-2'>
+                $result .=  "  <div class='card search-card mb-4 mx-2'>
                                     <a href='".$arrlink[$i]."'>
-                                        <img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
+                                        <div class='card-div-img'><img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                                         <div class='overlay'> <div class='text'>".$arrname[$i]."</div></div>
                                     </a>
                                 </div>";
             }
             
                 echo $result; 
-        echo "</div></div>";
+        echo "</div>";
     }
     if(count($arrname) && $table =='article'){
         echo "<h2>$h2</h2>
         <div class=''>
-    <div class='col-md-12 justify-content-start'>";
+    <div class='col-md-8 justify-content-start'>";
         for ($i=0; $i < count($arrname); $i++) { 
                 $str = substr($arrtext[$i], 0, 229).'...';
                 $result .=  "<div class='dark-article-card mb-4'>

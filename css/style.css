@@ -33,7 +33,6 @@ nav.dark{
     color: transparent;
     background-color: transparent;
     border: none;
-    /* transform: translateX(-50px); */
 }
 .search-div{
     height: 100%;
@@ -222,53 +221,25 @@ div.container{
     margin: 5vw;
 }
 
+/* idex page */
 #welcome{
     width: 100%;
     height: auto;
 }
 
-
-.catalog div.card, div.card.col-md-12{
-    background: #46465E;
-    box-shadow: -10px -10px 20px #585874, 
-                10px 10px 20px #39394F;
-    border-radius: 20px;
-    padding: 10px;
-    height: 230px;
-    display: flex;
-    justify-content: center;
-}
-.big-article{
-    background: #46465E;
-    box-shadow: -7px -7px 15px #585874, 
-                7px 7px 15px #39394F;
-    border-radius: 20px;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-}
-.big-article-img{
-    max-height: 350px;
-    overflow: hidden;
-    border-radius: 20px 20px 0px 0px;
-}
-.big-article-img img{
-    width: 100%;
-    height: auto;
-    transform: translateY(-10%);
-}
-.same.card{
-    max-width: 9vw;
-    background-color: #39394F;
-    border-radius: 20px;
-    padding: 5px;
-}
-
-.catalog div.card img, div.card.col-md-12 img, .same.card img, .ava{
+/* img sizing */
+div.card.col-md-12 img, .ava{
     border-radius: 20px;
     width: 100%;
     height: auto;
 }
+.card-div-img img, .samecard-div-img img{
+    width: auto;
+    height: 100%;
+}
+/* img sizing */
+
+/* hover overlay styles */
 .overlay {
     position: absolute;
     top: 0;
@@ -299,6 +270,71 @@ div.container{
     transform: translate(-50%, -50%);
     text-align: center;
   }
+/* hover overlay styles */
+
+/* card style */
+.catalog div.card, div.card.col-md-12{
+    background: #46465E;
+    box-shadow: -10px -10px 20px #585874, 
+                10px 10px 20px #39394F;
+    border-radius: 20px;
+    padding: 5px;
+    height: 230px;
+    width: 180px;
+    display: flex;
+    justify-content: center;
+}
+.card-div-img{
+    overflow: hidden;
+    width: 100%;
+    height: 220px;
+    border-radius: 20px;
+}
+.samecard-div-img{
+    overflow: hidden;
+    width: 100%;
+    height: 180px;
+    border-radius: 20px;
+}
+.catalog div.card.search-card{
+    width: 160px;
+    height: 230px;
+}
+/* card style */
+
+/* owl-carusel */
+.owl-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    width: 103%;
+    left: -1.1vw;
+    top: -24vh;
+}
+.owl-nav button span{
+    font-size: 40px;
+    font-family: 'Old Horror Films';
+}
+.owl-dots{
+    display: none;
+}
+.owl-item .card{
+    max-width: 180px;
+    height: 230px;
+    overflow: hidden;
+}
+.owl-item .card a img{
+    height: auto;
+    width: 100%;
+}
+.owl-stage{
+    padding: 30px 0px;
+}
+.catalog.owl-carousel{
+    padding: 0px 30px;
+}
+/* owl-carusel */
 
 .carusel{
     display: flex;
@@ -308,10 +344,12 @@ div.container{
 }
 
 .catalog{
+    padding: 0px;
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     padding: 20px 20px;
+    justify-content: start;
     overflow-x: hidden;
 }
 .arrow{
@@ -342,8 +380,11 @@ div.container{
 .twocorner-img{
     border-radius: 20px 20px 0px 0px;
     width: 100%;
-    height: 250px;
+    height: 150px;
     overflow: hidden;
+}
+.twocorner-img.index{
+    height: 240px;
 }
 .twocorner-img img{
     width: 100%;
@@ -570,6 +611,32 @@ textarea.comment-text:active, textarea.comment-text:focus{
 
 
 /* article catalog */
+.big-article{
+    background: #46465E;
+    box-shadow: -7px -7px 15px #585874, 
+                7px 7px 15px #39394F;
+    border-radius: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.big-article-img{
+    max-height: 350px;
+    overflow: hidden;
+    border-radius: 20px 20px 0px 0px;
+}
+.big-article-img img{
+    width: 100%;
+    height: auto;
+    transform: translateY(-10%);
+}
+.same.card{
+    max-width: 9vw;
+    background-color: #39394F;
+    border-radius: 20px;
+    padding: 5px;
+}
+
 .catalog-article-link:hover{
     text-decoration: none;
 }
@@ -757,38 +824,7 @@ color: #ff3a3a;
 }
 
 
-/* owl-carusel */
-.owl-nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: relative;
-    width: 103%;
-    left: -1.1vw;
-    top: -24vh;
-}
-.owl-nav button span{
-    font-size: 40px;
-    font-family: 'Old Horror Films';
-}
-.owl-dots{
-    display: none;
-}
-.owl-item .card{
-    max-width: 190px;
-    height: 270px;
-    overflow: hidden;
-}
-.owl-item .card a img{
-    height: 256px;
-    width: 100%;
-}
-.owl-stage{
-    padding: 30px 0px;
-}
-.catalog.owl-carousel{
-    padding: 0px 30px;
-}
+
 
 
 /* page 404 */

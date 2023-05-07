@@ -33,7 +33,7 @@
                     for ($i=0; $i < count($arrname); $i++) { 
                         $result .=  "  <div class='card col-md-3'>
                                             <a href='http://horrowood.com/index.php?action=article&id=".$arrid[$i]."'>
-                                            <div class='twocorner-img'><img  src='http://horrowood.com/img/db/article/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
+                                            <div class='twocorner-img index'><img  src='http://horrowood.com/img/db/article/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                                             <div class='article-title'>".$arrname[$i]."</div>
                                             <div class='overlay'> </div>
                                             </a>

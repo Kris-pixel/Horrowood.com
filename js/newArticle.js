@@ -45,7 +45,7 @@ let coverFiles;
             data.append( 'img', imgName );
 
             $.ajax({
-                url:"../functions/admin/newArticle.php",
+                url:"http://horrowood.com/functions/admin/newArticle.php",
                 method:"POST",
                 cache: false,
                 processData: false,

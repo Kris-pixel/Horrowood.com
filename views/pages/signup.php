@@ -11,22 +11,13 @@
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/loginForm.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-<style>
-    .error{
-        color: #FEB483;
-        font-family:'Corbel';
-        font-size: 10px;
-        position: absolute;
-        margin-right:1%;
-    }
-</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <title>Регистрация</title>
 </head>
 <body>
     <?php 
-        require "../../functions/logInOut/regForm.php";
+        // require "../../functions/logInOut/regForm.php";
     ?>
         <div class="container">
             <div class="logo">
@@ -35,35 +26,33 @@
             <div class="form rectangle-shadow">
                 <label class="form-name"> Регистрация</label>
 
-                <form method="post">
+                <form>
                     <div class="box-input ">
-                        <label class="form-label">Логин</label>
-                        <input class="input input-shadow" type="text" name="login" value="<?=@$login;?>" maxlength="25">
-                        <span class="error"><?=@$e1;?></span> 
+                        <label class="form-label">Логин  <span class="er-login ml-2"></span> </label>
+                        <input class="input input-shadow" type="text" name="login" value="" maxlength="25">
                     </div>
         
                     <div class="box-input">
-                        <label class="form-label">Email</label>
-                        <input class="input input-shadow" type="text" name="email" value="<?=@$email;?>" maxlength="25">
-                        <span class="error"><?=@$e4;?></span>
+                        <label class="form-label">Email <span class="er-email ml-2"></span></label>
+                        <input class="input input-shadow" type="text" name="email" value="" placeholder="example@gmail.com" maxlength="25">
                     </div>
         
                     <div class="box-input">
-                        <label class="form-label">Пароль</label>
+                        <label class="form-label pas">Пароль<br> <span class="er-password ml-2"></span></label>
                         <input class="input input-shadow" name="password" type="password" maxlength="25">
-                        <span class="error"><?=@$e2;?></span>
                     </div>
                     <div class="box-input">
-                        <label class="form-label">Повторите<br>пароль</label>
+                        <label class="form-label">Повторите пароль <span class="er-password2 ml-2"></span></label>
                         <input class="input input-shadow" name="password2" type="password" maxlength="25">
-                        <span class="error"><?=@$e3;?></span>
+                        <input type="hidden" name="url" value="<?=@$_SESSION['url'];?>">
                     </div>
             </div>
             <div class="button">
-                <input type="submit" class="bbutton button-shadow" value="Регистрация">
+                <input type="button" class="bbutton button-shadow" value="Регистрация">
             </div>
         </div>
 
         <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+        <script src="../../js/regForm.js"></script>
 </body>
 </html>

@@ -7,8 +7,8 @@ if($action == "bookCatalog"){
 ?>
 
 <h1>Каталог <?=@$pageTitle;?></h1>
-<div class="row">
-    <div id='content-place' class="col-md-9 row catalog justify-content-start py-0">
+<div class="row pr-5">
+    <div id='content-place' class="col-md-9 catalog pt-0">
     
     <?php 
         echo RenderCardCatalog($link, $_GET['action']);

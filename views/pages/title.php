@@ -39,7 +39,7 @@ $itemDate = date_format($date,'d-m-Y');
         <div  class="col-md-12 row">
             <div class="col-md-2">
                 <div class="card col-md-12 mb-4">
-                    <img src="http://horrowood.com/img/db/items/<?=@$item['img'];?>" alt="<?=@$item['img'];?>" title="<?=@$item['img'];?>">
+                    <div class='card-div-img'><img src="http://horrowood.com/img/db/items/<?=@$item['img'];?>" alt="<?=@$item['img'];?>" title="<?=@$item['img'];?>"></div>
                 </div>
 
                 <?php

@@ -91,25 +91,6 @@
                 }
             ?>
 
-            <!-- <div class="menu-dropdown nav-item">
-                <button class="dropbtn">
-                    <p>Логин</p>
-                    <img class="login-pic" src="ava.png" alt="">
-                </button>
-                <div class="dropdown-content">
-                <a href="#">Список фильмов</a>
-                <a href="#">Список книг</a>
-                <hr>
-                <a href="/">Достижения</a>
-                <hr>
-                <a href=".">Выход</a>
-                </div>
-            </div> -->
-
-            <!-- <div class=" guest-buttons">
-                <a class="nav-item in-but" href="http://horrowood.com/views/pages/login.php">Вход</a>
-                <a class="nav-item reg-but" href="http://horrowood.com/views/pages/signup.php">Регистрация</a>
-            </div> -->
         </div>
 
     </nav>
