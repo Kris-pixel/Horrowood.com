@@ -31,6 +31,7 @@
                             echo $head;?></title>
     </head>
 <body>
+    <?php include_once("views/modal.php");?>
     <?php include_once("views/preloader.php");?>
     <?php 
          if(session_status()!=PHP_SESSION_ACTIVE) session_start();

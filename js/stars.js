@@ -1,4 +1,13 @@
 $(document).ready(function(){
+    let modal = $("#modal");
+    $("h1.modal-name").html("Спасибо <br> за оценку!");
+    $("#modal .modal-div div").attr("id", "stars");
+
+    $(".modal-div input[value=ОК]").on("click", function () {
+        modal.removeClass("show");
+    });
+
+
     $(document).on('click', '.star.hoverable', function(){
         let id ="#" + $(this).attr("for");
         let value = $(id).attr('value');
@@ -15,7 +24,7 @@ $(document).ready(function(){
                 success:function()
                 {
                     $(".item-mark").load(href + " .item-mark");
-                  alert("Спасибо за оценку!");
+                    modal.addClass("show");
                 }
                 });
         }
