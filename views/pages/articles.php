@@ -45,32 +45,34 @@ if (mysqli_num_rows($result) < 1) {
 
     <h1>Статьи</h1>
         <div class="col-md-12 module p-0">
-            <div class="col-md-7 big-article">
+            <div class="col-xl-7 col-lg-12 big-article mb-xl-0 mb-4">
                 <a class="catalog-article-link" href="http://horrowood.com/index.php?action=article&id=<?=@$arrid[0];?>">
                     <div class="big-article-img"><img class="col-md-12 p-0 twocorner-img mb-3" src="http://horrowood.com/img/db/article/<?=@$arrimg[0];?>" alt="<?=@$arrimg[0];?>" title="<?=@$arrimg[0];?>"></div>
                     <h4 class="link-article-title"><?=@$arrtitle[0];?></h4>
                     <p class="reading-text"><?php echo substr($arrtext[0], 0, 229).'...'; ?>
                     </p>
                     <p class="breadcrump">Читать дельше...</p>
+                    <div class='overlay'> </div>
                 </a>
             </div>
-            <div class="ml-2 dark-article-container col-md-5">
+            <div class="p-0 pl-xl-4 dark-article-container col-xl-5 col-lg-12">
                 <div class=" dark-article-card mb-4 ">
                     <a class="catalog-article-link dark-article-layout" href="http://horrowood.com/index.php?action=article&id=<?=@$arrid[1];?>">
-                        <div class="col-md-6 p-0 article-rounded-img">
+                        <div class="col-xl-6 col-lg-3 p-0 article-rounded-img">
                             <img src="http://horrowood.com/img/db/article/<?=@$arrimg[1];?>" alt="<?=@$arrimg[1];?>" title="<?=@$arrimg[1];?>">
                         </div>
                         <div class="col-md-6">
                         <h6 class="link-article-title"><?=@$arrtitle[1];?></h6>
-                        <p class="reading-text"><?php echo substr($arrtext[1], 0, 229).'...'; ?>
+                        <p class="reading-text"><?php echo substr(strip_tags($arrtext[1]), 0, 229).'...'; ?>
                         </p>
                         <p class="breadcrump">Читать дельше...</p>
                         </div>
+                        <div class='overlay'> </div>
                     </a>
                 </div>
                 <div class=" dark-article-card">
                     <a class="catalog-article-link dark-article-layout" href="http://horrowood.com/index.php?action=article&id=<?=@$arrid[2];?>">
-                        <div class="col-md-6 p-0 article-rounded-img">
+                        <div class="col-xl-6 col-lg-3 p-0 article-rounded-img">
                             <img src="http://horrowood.com/img/db/article/<?=@$arrimg[2];?>" alt="<?=@$arrimg[2];?>" title="<?=@$arrimg[2];?>">
                         </div>
                         <div class="col-md-6">
@@ -79,24 +81,26 @@ if (mysqli_num_rows($result) < 1) {
                         </p>
                         <p class="breadcrump">Читать дельше...</p>
                         </div>
+                        <div class='overlay' style="top:51.5%;"> </div>
                     </a>
                 </div>
             </div>
         </div>
         <div class="col-md-12 module p-0 mt-4">
-            <div class="ml-2 col-md-7 big-article">
+            <div class="ml-xl-2 ml-md-0 col-xl-7 col-lg-12 big-article mb-xl-0 mb-4">
                 <a class="catalog-article-link" href="http://horrowood.com/index.php?action=article&id=<?=@$arrid[3];?>">
                     <div class="big-article-img"><img class="col-md-12 p-0 twocorner-img mb-3" src="http://horrowood.com/img/db/article/<?=@$arrimg[3];?>" alt="<?=@$arrimg[3];?>" title="<?=@$arrimg[3];?>"></div>
                     <h4 class="link-article-title"><?=@$arrtitle[3];?></h4>
                     <p class="reading-text"><?php echo substr($arrtext[3], 0, 229).'...'; ?>
                     </p>
                     <p class="breadcrump">Читать дельше...</p>
+                    <div class='overlay'> </div>
                 </a>
             </div>
-            <div class="pl-0 dark-article-container col-md-5">
+            <div class="p-0 pr-xl-3 dark-article-container col-xl-5 col-lg-12">
                 <div class=" dark-article-card mb-4 ">
                     <a class="catalog-article-link dark-article-layout" href="http://horrowood.com/index.php?action=article&id=<?=@$arrid[4];?>">
-                        <div class="col-md-6 p-0 article-rounded-img">
+                        <div class="col-xl-6 col-lg-3 p-0 article-rounded-img">
                             <img src="http://horrowood.com/img/db/article/<?=@$arrimg[4];?>" alt="<?=@$arrimg[4];?>" title="<?=@$arrimg[4];?>">
                         </div>
                         <div class="col-md-6">
@@ -105,11 +109,13 @@ if (mysqli_num_rows($result) < 1) {
                         </p>
                         <p class="breadcrump">Читать дельше...</p>
                         </div>
+                        <div class='overlay'> </div>
                     </a>
+                    
                 </div>
                 <div class=" dark-article-card">
                     <a class="catalog-article-link dark-article-layout" href="http://horrowood.com/index.php?action=article&id=<?=@$arrid[5];?>">
-                        <div class="col-md-6 p-0 article-rounded-img">
+                        <div class="col-xl-6 col-lg-3 p-0 article-rounded-img">
                             <img src="http://horrowood.com/img/db/article/<?=@$arrimg[5];?>" alt="<?=@$arrimg[5];?>" title="<?=@$arrimg[5];?>">
                         </div>
                         <div class="col-md-6">
@@ -118,6 +124,7 @@ if (mysqli_num_rows($result) < 1) {
                         </p>
                         <p class="breadcrump">Читать дельше...</p>
                         </div>
+                        <div class='overlay' style="top:51.5%;"> </div>
                     </a>
                 </div>
             </div>

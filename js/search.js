@@ -1,6 +1,6 @@
 $(document).ready(function(){
     let hintWidth = $('form.search-panel').css('width');
-    let hintPos =  $('form.search-panel').position();
+    let hintPos =  $('.search-div').position();
     let hintX = hintPos.left;
     let hintY = hintPos.top;
     let hintHeight = Number($('form.search-panel').css('height').slice(0,-2));
@@ -8,7 +8,7 @@ $(document).ready(function(){
 
     $('#Search').css('width', hintWidth);
     $('#Search').css('left', hintX);
-    $('#Search').css('top', hintY + hintHeight);
+    $('#Search').css('top', hintY + hintHeight*1.6);
 
 
 

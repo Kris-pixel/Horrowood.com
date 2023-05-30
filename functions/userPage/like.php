@@ -12,7 +12,7 @@ $arrname = [];
 $arrimg = [];
 $arrid = [];
 $arrtext = [];
-$result = '';
+$result = "";
 
 $rez = mysqli_query($link, $query)or die("Ошибка " . mysqli_error($link)); 
 while ($row = mysqli_fetch_assoc($rez)) {
@@ -22,17 +22,18 @@ while ($row = mysqli_fetch_assoc($rez)) {
     $arrtext[] = $row['body'];
 }
 
+
 for ($i=0; $i < count($arrname); $i++) { 
-    $str = substr($arrtext[$i], 0, 229).'...';
+    $str = substr(strip_tags($arrtext[$i]), 0, 700).'...';
     $result .=  "   <div class='dark-article-card mb-4'>
                         <a class='catalog-article-link dark-article-layout' href='http://horrowood.com/index.php?action=article&id=".$arrid[$i]."'>
                             <div class='col-md-3 p-0 article-rounded-img'>
                                 <img src='http://horrowood.com/img/db/article/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
                             </div>
-                            <div class='col-md-10'>
+                            <div class='col-md-9'>
                             <h6 class='link-article-title'>".$arrname[$i]."</h6>
-                            <p class='reading-text'>$str
-                            </p>
+                            <div class='reading-text'>$str
+                            </div>
                             <p class='breadcrump'>Читать дельше...</p>
                             </div>
                         </a>
@@ -40,6 +41,7 @@ for ($i=0; $i < count($arrname); $i++) {
 }
 ?>
   
-  <div class="pl-3">
+<div class="pl-3">
   <?php echo $result; ?>  
 </div>
+

@@ -15,15 +15,15 @@ switch ($_GET['sort']) {
     case '1':
         $sort = "title ASC";
         break;
-        case '2':
-            $sort = "title DESC";
-            break;
-            case '3':
-                $sort = "release_date ASC";
-                break;
-                case '4':
-                    $sort = "release_date DESC";
-                    break;
+    case '2':
+        $sort = "title DESC";
+        break;
+    case '3':
+        $sort = "release_date ASC";
+        break;
+    case '4':
+        $sort = "release_date DESC";
+        break;
     
     default:
     $sort ="date_rec_creation";
@@ -52,11 +52,13 @@ while ($row = mysqli_fetch_assoc($rez)) {
 }
 
 for ($i=0; $i < count($arrname); $i++) { 
-    $result .=  "  <div class='card col-md-2 mb-4 mx-2'>
+    $result .=  "   <div class='col-xl-2 col-lg-3 col-md-3 col-sm-3 p-2'>
+                        <div class='card m-0'>
                         <a href='http://horrowood.com/index.php?action=$item&id=".$arrid[$i]."'>
-                            <img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'>
+                        <div class='card-div-img'><img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                             <div class='overlay'> <div class='text'>".$arrname[$i]."</div></div>
                         </a>
+                        </div>
                     </div>";
 }
 

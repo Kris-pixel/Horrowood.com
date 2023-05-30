@@ -1,6 +1,6 @@
 <div class="page-404">
     <h1>О нет, ваша страница пропала без вести!</h1>
-    <img src="http://horrowood.com/img/icons/404_1.gif" id="img-404">
+    <img id="notfount" src="http://horrowood.com/img/icons/404_1.gif">
     <div>
   
     <div class="bbutton button-shadow">

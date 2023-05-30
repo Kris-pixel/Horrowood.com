@@ -66,8 +66,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         <td><?=@$country;?></td>
         <td><?=@$r;?></td>
         <td><?=@$time;?></td>
-        <td><a class="del" href="http://horrowood.com/functions/admin/delItem.php?id=<?php echo $id; ?>"
-                                                                   onclick="return confirm('Вы уверены, что хотите удалить статью??')">Удалить</a>
+        <td>
+            <div  class="breadcrump del-admin-but" data-id="<?php echo $id;?>" data-script="http://horrowood.com/functions/admin/delItem.php?id=">Удалить</div>
         </td>
     </tr>
 
@@ -98,3 +98,4 @@ if ($page != $totalpages) {
     echo "<a class='pagination' href='http://horrowood.com/index.php?action=admin&tab=Book&page=$totalpages'>>></a>";
 }
 echo "</div>";?>
+<script src="js/confirm.js"></script>

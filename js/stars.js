@@ -2,6 +2,7 @@ $(document).ready(function(){
     let modal = $("#modal");
     $("h1.modal-name").html("Спасибо <br> за оценку!");
     $("#modal .modal-div div").attr("id", "stars");
+    $("#modal .modal-div div").html("<img src='http://horrowood.com/img/icons/stars.png' alt='stars.png' title='stars.png'>");
 
     $(".modal-div input[value=ОК]").on("click", function () {
         modal.removeClass("show");

@@ -1,5 +1,9 @@
 <?php
 require_once '../../connect/db.php';
+if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+
+
+$_SESSION['url'] = 'http://horrowood.com/index.php' ;
 
 if (isset($_GET['id'])) {
     $tab = substr($_GET['id'],0,1) == 'f' ? "Film" : "Book";

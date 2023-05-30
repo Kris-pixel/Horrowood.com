@@ -15,3 +15,11 @@ var animation = bodymovin.loadAnimation({
     autoplay: true, // Optional
     name: "logo", // Name for future reference. Optional.
   });
+  var animation = bodymovin.loadAnimation({
+    container: document.getElementById('logoAnim3'), // Required
+    path: '../animations/logo.json', // Required
+    renderer: 'svg', // Required
+    loop: true, // Optional
+    autoplay: true, // Optional
+    name: "logo", // Name for future reference. Optional.
+  });

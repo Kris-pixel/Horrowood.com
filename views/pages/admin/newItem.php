@@ -113,7 +113,7 @@
 
                 <div class="box-input my-4">
                     <label class="form-label mr-4"><?=@$cover;?>  <span class="er-img"></span></label>
-                    <input type="file" name="img" accept=".png, .jpg, .jpeg">
+                    <input type="file" name="img" accept=".webp, .png, .jpg, .jpeg">
                     <span class="input-file bbutton comment-button file-btn">Выберите файл</span>
                     <label class="ml-2 form-label file-name">Файл не выбран</label>
                    

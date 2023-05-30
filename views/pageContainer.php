@@ -7,7 +7,7 @@
 ?>
 
 
-<div class="container mt-3">
+<div class="container-lg px-md-5 px-1 container-xl mt-3 mb-5">
 
     <?php
           switch ($action) {

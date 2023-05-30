@@ -1,4 +1,4 @@
-<div class="form rectangle-shadow px-5 py-4">
+<div class="form rectangle-shadow px-sm-5 p-3 py-4">
         <div>
             <div>
                 <h2>Новая статья</h2>

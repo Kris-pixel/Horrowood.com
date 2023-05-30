@@ -54,8 +54,8 @@ while ($row = mysqli_fetch_assoc($result)) {
         <td><a href="http://horrowood.com/index.php?action=article&id=<?=@$id;?>"><?php echo substr($title, 0, 50); ?></a></td>
         <td><?php echo $topic; ?></td>
         <td><?php echo $time; ?></td>
-        <td><a href="http://horrowood.com/index.php?action=editArticle&id=<?php echo $id; ?>">Редактировать</a> | <a class="del" href="http://horrowood.com/functions/admin/delArticle.php?id=<?php echo $id; ?>"
-                                                                   onclick="return confirm('Вы уверены, что хотите удалить статью??')">Удалить</a>
+        <td class="row m-0"><a class="mr-1" href="http://horrowood.com/index.php?action=editArticle&id=<?php echo $id; ?>">Редактировать</a> | 
+        <div  class="ml-1 breadcrump del-admin-but" data-id="<?php echo $id;?>" data-script="http://horrowood.com/functions/admin/delArticle.php?id=">Удалить</div>
         </td>
     </tr>
 
@@ -86,3 +86,5 @@ if ($page != $totalpages) {
     echo "<a class='pagination' href='http://horrowood.com/index.php?action=admin&tab=Article&page=$totalpages'>>></a>";
 }
 echo "</div>";?>
+
+<script src="js/confirm.js"></script>

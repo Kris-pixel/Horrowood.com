@@ -33,7 +33,7 @@ if (isset($_POST['upd'])) {
 }
 ?>
 
-<div class="form rectangle-shadow px-5 py-4">
+<div class="form rectangle-shadow px-sm-5 p-3 py-4">
     <div>
 
         <div class="edit-title-div">
@@ -65,8 +65,7 @@ if (isset($_POST['upd'])) {
 
             <div class="edit-title-div article-info">
                 <input type="submit" class="mt-3 bbutton button-shadow" name="upd" value="Сохранить">
-                <p class="breadcrump del-admin-but m-0"><a  href="http://horrowood.com/functions/admin/delArticle.php?id=<?php echo $row['id']; ?>"
-                   onclick="return confirm('Are you sure you want to delete this post?'); ">[Удалить статью]</a></p>
+                <p class="breadcrump del-admin-but" data-id="<?php echo $id;?>" data-script="http://horrowood.com/functions/admin/delArticle.php?id=">[Удалить]</p>
             </div>
         </form>
     </div>
@@ -79,3 +78,4 @@ mysqli_close($link);?>
 <script>
     $('#description').trumbowyg();
 </script>
+<script src="js/confirm.js"></script>

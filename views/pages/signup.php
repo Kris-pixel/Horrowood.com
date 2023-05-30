@@ -3,7 +3,7 @@
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,7 +17,7 @@
 </head>
 <body>
     <?php 
-        // require "../../functions/logInOut/regForm.php";
+        include_once("../modal.php");
     ?>
         <div class="container">
             <div class="logo">
@@ -38,7 +38,7 @@
                     </div>
         
                     <div class="box-input">
-                        <label class="form-label pas">Пароль<br> <span class="er-password ml-2"></span></label>
+                        <label class="form-label pas">Пароль <span class="er-password ml-2"></span></label>
                         <input class="input input-shadow" name="password" type="password" maxlength="25">
                     </div>
                     <div class="box-input">
@@ -46,13 +46,16 @@
                         <input class="input input-shadow" name="password2" type="password" maxlength="25">
                         <input type="hidden" name="url" value="<?=@$_SESSION['url'];?>">
                     </div>
+                </form>
             </div>
             <div class="button">
                 <input type="button" class="bbutton button-shadow" value="Регистрация">
             </div>
         </div>
 
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
-        <script src="../../js/regForm.js"></script>
+    <script type="text/javascript" src="../../js/lottie.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script> 
+    <script type="text/javascript" src="../../js/hiAnim.js"></script>
+    <script src="../../js/regForm.js"></script>
 </body>
 </html>

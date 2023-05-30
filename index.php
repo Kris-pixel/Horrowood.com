@@ -1,4 +1,7 @@
-<html>
+<?php  if(session_status()!=PHP_SESSION_ACTIVE) session_start();?>
+
+<!doctype html>
+<html lang="ru">
     <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,10 +34,10 @@
                             echo $head;?></title>
     </head>
 <body>
+    <?php include_once("views/confirm.php");?>
     <?php include_once("views/modal.php");?>
     <?php include_once("views/preloader.php");?>
     <?php 
-         if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 
         //  сюда подключать все нужные функции
         require_once('connect/db.php');
@@ -52,5 +55,6 @@
     <script type="text/javascript" src="js/welcomAnim.js"></script>
     <script type="text/javascript" src="js/ghostAnim.js"></script>
     <script src="js/userAnim.js"></script>
+    <script src="js/guestNotes.js"></script>
 </body>
 </html>

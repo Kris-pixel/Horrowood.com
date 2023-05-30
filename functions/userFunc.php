@@ -119,7 +119,7 @@ function getTable($link, $listType, $rowcount, $itemType){
         $markForm = $arrmarks[$i] == NULL ? NULL : $arrmarks[$i];
         $index=$i+1;
         $result .=  "<tr class='data-row'>
-        <td>$index</td>
+        <td class='pr-2'>$index</td>
         <td>
           <a href='http://horrowood.com/index.php?action=filmItem&id=$itemId[$i]'>$arrname[$i]</a>
         </td>

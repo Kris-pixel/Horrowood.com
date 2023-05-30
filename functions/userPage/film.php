@@ -10,8 +10,8 @@ if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 <table>
   <thead>
     <tr>
-      <th>#</th>
-      <th>Название</th>
+      <th class="pr-2">#</th>
+      <th class="col-lg-9">Название</th>
       <th>Оценка</th>
       <th>Эпизоды</th>
       <th></th>
@@ -32,8 +32,8 @@ if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 <table>
   <thead>
     <tr>
-      <th>#</th>
-      <th>Название</th>
+      <th class="pr-2">#</th>
+      <th class="col-lg-9">Название</th>
       <th>Оценка</th>
       <th>Эпизоды</th>
       <th></th>
@@ -54,8 +54,8 @@ if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 <table>
   <thead>
     <tr>
-      <th>#</th>
-      <th>Название</th>
+      <th class="pr-2">#</th>
+      <th class="col-lg-9">Название</th>
       <th>Оценка</th>
       <th>Эпизоды</th>
       <th></th>
@@ -76,8 +76,8 @@ if(session_status()!=PHP_SESSION_ACTIVE) session_start();
 <table>
   <thead>
     <tr>
-      <th>#</th>
-      <th>Название</th>
+      <th class="pr-2">#</th>
+      <th class="col-lg-9">Название</th>
       <th>Оценка</th>
       <th>Эпизоды</th>
       <th></th>

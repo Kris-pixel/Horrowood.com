@@ -1,4 +1,5 @@
 <form id="<?=@$action;?>" class="col-md-12 dark-card py-4 dropdown-filter">
+                    <h2 class="filter-close">X</h2>
                     <div class="box-input">
                         <label class="form-label">Статус:</label>
                         <select id="status" class="dropdown" placeholder="пожалуйста выберите">
@@ -47,8 +48,8 @@
                             <option value="0">неважно</option>
                             <option value="1">алфавиту (А-Я)</option>
                             <option value="2">алфавиту (Я-А)</option>
-                            <option value="3">сначала новые</option>
-                            <option value="4">сначала старые</option>
+                            <option value="4">сначала новые</option>
+                            <option value="3">сначала старые</option>
                         </select>
                     </div>
                 <!-- <div class="button">

@@ -1,4 +1,4 @@
-<div class="col-md-12 same-part row p-0">
+<div class="same-part">
 
 
 <?php

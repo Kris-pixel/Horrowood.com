@@ -34,6 +34,14 @@ $("input[type=button").on("click", function () {
     let passwor2 =  $("input[name=password2]").val();
     let url =  $("input[name=url]").val();
 
+    let modal = $("#modal");
+    $("#modal .modal-div div").attr("id", "hi");
+
+    $(".modal-div input[value=ОК]").on("click", function () {
+        // modal.removeClass("show");
+        location.href = url;
+    });
+
     console.log(url);
     if(!login){
         $('.er-login').text("Заполните поле");
@@ -75,22 +83,26 @@ $("input[type=button").on("click", function () {
             dataType:"html",
             success:function(response)
             {
-                if(response.includes("Вы успешно зарегистрированы")){
-                    $.ajax({
-                        url:"http://horrowood.com/functions/logInOut/login.php",
-                        method:"POST",
-                        cache: false,
-                        data:{
-                            'login': login,
-                            'password': password
-                        },
-                        dataType:"html",
-                        success:function(response)
-                        {        
-                        }
-                        });
-                    alert (response);
-                    location.assign(url);
+                if(response.includes("Добро пожаловать,")){
+                    console.log(response);
+                    $("h1.modal-name").html(response);
+                    modal.addClass("show");
+                    hi.play("hi");
+                    // $.ajax({
+                    //     url:"http://horrowood.com/functions/logInOut/login.php",
+                    //     method:"POST",
+                    //     cache: false,
+                    //     data:{
+                    //         'login': login,
+                    //         'password': password
+                    //     },
+                    //     dataType:"html",
+                    //     success:function(response)
+                    //     {        
+                    //     }
+                    //     });
+                    //     location.assign(url);
+                    //     modal.addClass("show");
                 }else{
                     $('.er-login').text(response);
                 }       

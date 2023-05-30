@@ -58,7 +58,7 @@ if (isset($_POST) && isset($_FILES)) {
         $query = "INSERT INTO items (id, type_code, episode_amount, duration, satus_code, 
         country, rating, img, release_date, title, orig_title, description)
         VALUES('$id', '$type', '$epAmount', '$duration','$status',
-        '$country', '$raiting', '$img', '$releaseDate', '$title', '$origTitle', '$dascription')";
+        '$country', '$raiting', '".$_FILES['0']['name']."', '$releaseDate', '$title', '$origTitle', '$dascription')";
         $rez = mysqli_query($link, $query)or die("Ошибка " . mysqli_error($link));
         // var_dump($rez);
     }

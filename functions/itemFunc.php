@@ -27,11 +27,13 @@ function RenderCardCatalog ($link, $action){
     }
 
     for ($i=0; $i < count($arrname); $i++) { 
-        $result .=  "  <div class='card col-md-2 mb-4 ml-2 mr-3'>
+        $result .=  "  <div class='col-xl-2 col-lg-3 col-md-3 col-sm-3 p-2'>
+                            <div class='card m-0'>
                             <a href='http://horrowood.com/index.php?action=$item&id=".$arrid[$i]."'>
                                 <div class='card-div-img'><img src='http://horrowood.com/img/db/items/".$arrimg[$i]."' alt='".$arrimg[$i]."' title='".$arrimg[$i]."'></div>
                                 <div class='overlay'> <div class='text'>".$arrname[$i]."</div></div>
                             </a>
+                            </div>
                         </div>";
     }
     

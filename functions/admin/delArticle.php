@@ -1,5 +1,9 @@
 <?php
 require_once '../../connect/db.php';
+if(session_status()!=PHP_SESSION_ACTIVE) session_start();
+
+
+$_SESSION['url'] = 'http://horrowood.com/index.php' ;
 
 if (isset($_GET['id'])) {
     $id = mysqli_real_escape_string($link, $_GET['id']);
@@ -15,7 +19,7 @@ if (isset($_GET['id'])) {
     $result = mysqli_query($link, $query);
 
     if ($result) {
-        echo "<script>location.href='http://horrowood.com/index.php?action=admin';</script>";
+        echo "<script>location.href='http://horrowood.com/index.php?action=admin&tab=Article&page=1';</script>";
     } else {
         echo "Failed to delete." . mysqli_connect_error();
     }
