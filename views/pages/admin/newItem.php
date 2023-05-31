@@ -6,12 +6,14 @@
         $duration = "Длительность эпизода";
         $cover = "Постер";
         $display = "";
+        $author = "Режиссёр";
     }elseif ($_GET['i'] == 'b'){
         $formTitle =  "Добавить книгу";
         $action = "bookCatalog";
         $ep_amount = "Количестко томов";
         $duration = "Количество глав";
         $cover = "Обложка";
+        $author = "Автор";
         $display = "style='display:none;'";
     }else{
         echo "<script>location.href='http://horrowood.com/index.php?action=404';</script>";
@@ -35,6 +37,10 @@
                     <label class="form-label mr-2">Оригинальное название  <span class="er-orig-title"></span></label>
                     <input type="text" class="input input-shadow" name="orig-title"> 
                 </div>
+                <div class="box-input my-4">
+                    <label class="form-label mr-2"><?=@$author;?>  <span class="er-author"></span></label>
+                    <input type="text" class="input input-shadow" name="author"> 
+                </div>
 
                 <div class="box-input my-4">
                     <label class="form-label mr-2">Страна   <span class="er-country"></span></label>
@@ -55,7 +61,12 @@
                         </select> 
                 </div>
                
-                <div class="box-input my-4">
+              
+                   
+</div>
+<div class="mx-md-5">
+                
+<div class="box-input my-4">
                     <label class="form-label mr-2">Рейтинг <span class="er-rating"></span></label>
                     <select id="raiting" class="dropdown" placeholder="пожалуйста выберите" name="raiting">
                         <option value="0">Выберите рейтинг</option>
@@ -64,20 +75,8 @@
                         <option value="R-17">R-17</option>
                     </select>
                 </div>
-                   
-</div>
-<div class="mx-md-5">
                 
-
-
-                
-                <div class="box-input my-4">
-                <label class="form-label mr-2">Тип  <span class="er-type"></span></label>
-                        <select id="type" class="dropdown" placeholder="пожалуйста выберите" name="type">
-                        <option value="0">Выберите тип</option>
-                            <?php echo getTypeList($link,$action);?>
-                        </select>  
-                </div>
+              
 
                 <div class="box-input my-4">
                     <label class="form-label mr-2"><?=@$ep_amount;?>  <span class="er-ep-amount"></span></label>
@@ -104,12 +103,22 @@
 </div>
 
 <div>
-                    <div class="box-input my-4">
+
+<div class="box-input my-4">
                         <label class="form-label mr-2">Поджанры <span class="er-genre"></span></label>
                         <select data-placeholder="выберите поджанры" name="genre" multiple="multiple">
                            <?php echo getGenreList($link);?>
                         </select>
                     </div>
+                    
+            <div class="box-input my-4">
+                <label class="form-label mr-2">Тип  <span class="er-type"></span></label>
+                        <select id="type" class="dropdown" placeholder="пожалуйста выберите" name="type">
+                        <option value="0">Выберите тип</option>
+                            <?php echo getTypeList($link,$action);?>
+                        </select>  
+                </div>
+                  
 
                 <div class="box-input my-4">
                     <label class="form-label mr-4"><?=@$cover;?>  <span class="er-img"></span></label>

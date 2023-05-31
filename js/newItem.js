@@ -3,6 +3,7 @@ const regex = new RegExp(/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[
 let frames;
 let coverFiles;
 let formName = '';
+let existCheck = '';
 
 $('.bbutton.comment-button.file-btn').on( "click", function() {
     $(this).prev().trigger('click');
@@ -37,6 +38,7 @@ $('.bbutton.comment-button.file-btn').on( "click", function() {
     formName = $(".newitem-form").attr("id");
     let title = $("input[name=title]").val();
     let origTitle = $("input[name=orig-title]").val();
+    let author = $("input[name=author]").val();
     let country = $("input[name=country]").val();
     let releaseDate = $("input[name=release-date]").val();
     let status = $("select[name=status]").val();
@@ -71,6 +73,9 @@ $('.bbutton.comment-button.file-btn').on( "click", function() {
     if(!origTitle){
         $('.er-orig-title').text("Заполните поле");
     }
+    if(!author){
+        $('.er-author').text("Заполните поле");
+    }
     if(!country){
         $('.er-country').text("Заполните поле");
     }
@@ -101,9 +106,9 @@ $('.bbutton.comment-button.file-btn').on( "click", function() {
     if(!cover){
         $('.er-img').text("Выберите файл");
     }
-    let check = title && origTitle && country && releaseDate && status && rating 
+    let check = title && origTitle && author && country && releaseDate && status && rating 
                 && type && episodeAmount && duration && genre && cover;
-console.log(regex.test(trailer));
+// console.log(regex.test(trailer));
     if(formName == 'f' ){
        
         $('.er-frames').text(errorMessage);
@@ -129,6 +134,7 @@ console.log(regex.test(trailer));
         data.append('id-prefix', formName );
         data.append('title', title);
         data.append('orig-title', origTitle);
+        data.append('author', author);
         data.append('country', country);
         data.append('release-date', releaseDate);
         data.append('status', status);
@@ -150,24 +156,50 @@ console.log(regex.test(trailer));
         }
 
         $.ajax({
-            url:"../functions/admin/newItem.php",
+            url:"../functions/admin/ckecknewindb.php",
             method:"POST",
             cache: false,
             processData: false,
             contentType : false,
             data:data,
-            dataType:"json",
-            success:function(data)
+            dataType:"html",
+            success:function(response)
             {
-                console.log('here');
-                if(formName == 'f'){
-                    location.href='http://horrowood.com/index.php?action=admin&tab=Film&page=1';
-                }else if(formName == 'b'){
-                    location.href='http://horrowood.com/index.php?action=admin&tab=Book&page=1';
+                existCheck = response;
+                if(response != ''){
+                    let modal = $("#modal");
+
+                    $(".modal-div input[value=ОК]").on("click", function () {
+                        modal.removeClass("show");
+                    });
+                
+                
+                    $("h1.modal-name").html("Такая запись<br> уже существует базе данны!");
+                    $("#modal .modal-div div").html("<img src='http://horrowood.com/img/icons/info.png' alt='info.png' title='info.png'>");
+                    modal.addClass("show");
+                }else{
+                     $.ajax({
+                url:"../functions/admin/newItem.php",
+                method:"POST",
+                cache: false,
+                processData: false,
+                contentType : false,
+                data:data,
+                dataType:"json",
+                success:function(response)
+                {
+                    if(formName == 'f'){
+                        location.href='http://horrowood.com/index.php?action=admin&tab=Film&page=1';
+                    }else if(formName == 'b'){
+                        location.href='http://horrowood.com/index.php?action=admin&tab=Book&page=1';
+                    }
                 }
-              
+                });
+                       
+                }
             }
             });
+           
 
     }
 

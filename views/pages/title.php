@@ -7,6 +7,7 @@ if($action == "bookItem")
     $bredtitle="Каталог книг";
     $hide="display:none;";
     $time="";
+    $author = "Автор";
 }
 if($action == "filmItem")
 {
@@ -15,6 +16,7 @@ if($action == "filmItem")
     $amount2="Длительность эпизода";
     $bredhref="http://horrowood.com/index.php?action=filmCatalog";
     $bredtitle="Каталог фильмов";
+    $author = "Режиссёр";
     $time="мин";
 }
 
@@ -62,6 +64,7 @@ $itemDate = date_format($date,'d-m-Y');
                 </div>
                 <div>
                     <p class="reading-text">Оригинальное название: <?=@$item['orig_title'];?></p>
+                    <p class="reading-text"><?=@$author;?>: <?=@$item['author'];?></p>
                     <p class="reading-text">Страна: <?=@$item['country'];?></p>
                     <p class="reading-text">Тип:  <?=@$item['name'];?></p>
                     <p class="reading-text">Дата выпуска: <?=@$itemDate;?></p>

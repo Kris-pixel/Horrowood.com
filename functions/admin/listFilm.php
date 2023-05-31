@@ -38,7 +38,7 @@ echo "<th>ID</th>";
 echo "<th>Название</th>";
 echo "<th>Тип</th>";
 echo "<th>Статус</th>";
-echo "<th>Страна</th>";
+echo "<th>Режиссёр</th>";
 echo "<th>Рейтинг</th>";
 echo "<th>Дата добавления</th>";
 echo "<th>Действие</th>";
@@ -53,7 +53,7 @@ while ($row = mysqli_fetch_assoc($result)) {
     $title = $row['title'];
     $type = $row['name'];
     $status = $row['status_name'];
-    $country = $row['country'];
+    $author = $row['author'];
     $r = $row['rating'];
     $time = $row['date_rec_creation'];
 
@@ -64,7 +64,7 @@ while ($row = mysqli_fetch_assoc($result)) {
         <td><a href="http://horrowood.com/index.php?action=filmItem&id=<?=@$id;?>"><?php echo substr($title, 0, 50); ?></a></td>
         <td><?=@$type;?></td>
         <td><?=@$status;?></td>
-        <td><?=@$country;?></td>
+        <td><?=@$author;?></td>
         <td><?=@$r;?></td>
         <td><?=@$time;?></td>
         <td>

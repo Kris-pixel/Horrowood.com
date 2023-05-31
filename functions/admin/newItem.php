@@ -26,6 +26,7 @@ if (isset($_POST) && isset($_FILES)) {
     $id =  uniqid($prefix);
     $title =  mysqli_real_escape_string($link, $_POST['title']);
     $origTitle = mysqli_real_escape_string($link, $_POST['orig-title']);
+    $author = mysqli_real_escape_string($link, $_POST['author']);
     $country = mysqli_real_escape_string($link, $_POST['country']);
     $releaseDate = $_POST['release-date'];
     $status = $_POST['status'];
@@ -37,12 +38,13 @@ if (isset($_POST) && isset($_FILES)) {
     $dascription = mysqli_real_escape_string($link, $_POST['description']);
     $genres = explode(' ', $_POST['genres']);
 
+
     // var_dump($genres);
     if($prefix == 'f-'){
         $query = "INSERT INTO items (id, type_code, episode_amount, duration, satus_code, 
-                country, rating, img, release_date, title, orig_title, description, trailer)
+                country, rating, img, release_date, title, orig_title, description, trailer, author)
                 VALUES('$id', '$type', '$epAmount', '$duration','$status',
-                '$country', '$raiting', '".$_FILES['0']['name']."', '$releaseDate', '$title', '$origTitle', '$dascription', '$trailer')";
+                '$country', '$raiting', '".$_FILES['0']['name']."', '$releaseDate', '$title', '$origTitle', '$dascription', '$trailer','$author')";
         $rez = mysqli_query($link, $query)or die("Ошибка " . mysqli_error($link));
         // var_dump($rez);
 
@@ -56,9 +58,9 @@ if (isset($_POST) && isset($_FILES)) {
     }
     if($prefix == 'b-'){
         $query = "INSERT INTO items (id, type_code, episode_amount, duration, satus_code, 
-        country, rating, img, release_date, title, orig_title, description)
+        country, rating, img, release_date, title, orig_title, description, author)
         VALUES('$id', '$type', '$epAmount', '$duration','$status',
-        '$country', '$raiting', '".$_FILES['0']['name']."', '$releaseDate', '$title', '$origTitle', '$dascription')";
+        '$country', '$raiting', '".$_FILES['0']['name']."', '$releaseDate', '$title', '$origTitle', '$dascription', '$author')";
         $rez = mysqli_query($link, $query)or die("Ошибка " . mysqli_error($link));
         // var_dump($rez);
     }
