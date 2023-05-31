@@ -51,7 +51,7 @@ if (mysqli_num_rows($result) < 1) {
                     <h4 class="link-article-title"><?=@$arrtitle[0];?></h4>
                     <p class="reading-text"><?php echo substr($arrtext[0], 0, 229).'...'; ?>
                     </p>
-                    <p class="breadcrump">Читать дельше...</p>
+                    <p class="breadcrump">Читать дальше...</p>
                     <div class='overlay'> </div>
                 </a>
             </div>
@@ -65,7 +65,7 @@ if (mysqli_num_rows($result) < 1) {
                         <h6 class="link-article-title"><?=@$arrtitle[1];?></h6>
                         <p class="reading-text"><?php echo substr(strip_tags($arrtext[1]), 0, 229).'...'; ?>
                         </p>
-                        <p class="breadcrump">Читать дельше...</p>
+                        <p class="breadcrump">Читать дальше...</p>
                         </div>
                         <div class='overlay'> </div>
                     </a>
@@ -79,7 +79,7 @@ if (mysqli_num_rows($result) < 1) {
                         <h6 class="link-article-title"><?=@$arrtitle[2];?></h6>
                         <p class="reading-text"><?php echo substr($arrtext[2], 0, 229).'...'; ?>
                         </p>
-                        <p class="breadcrump">Читать дельше...</p>
+                        <p class="breadcrump">Читать дальше...</p>
                         </div>
                         <div class='overlay' style="top:51.5%;"> </div>
                     </a>
@@ -93,7 +93,7 @@ if (mysqli_num_rows($result) < 1) {
                     <h4 class="link-article-title"><?=@$arrtitle[3];?></h4>
                     <p class="reading-text"><?php echo substr($arrtext[3], 0, 229).'...'; ?>
                     </p>
-                    <p class="breadcrump">Читать дельше...</p>
+                    <p class="breadcrump">Читать дальше...</p>
                     <div class='overlay'> </div>
                 </a>
             </div>
@@ -107,7 +107,7 @@ if (mysqli_num_rows($result) < 1) {
                         <h6 class="link-article-title"><?=@$arrtitle[4];?></h6>
                         <p class="reading-text"><?php echo substr($arrtext[4], 0, 229).'...'; ?>
                         </p>
-                        <p class="breadcrump">Читать дельше...</p>
+                        <p class="breadcrump">Читать дальше...</p>
                         </div>
                         <div class='overlay'> </div>
                     </a>
@@ -122,7 +122,7 @@ if (mysqli_num_rows($result) < 1) {
                         <h6 class="link-article-title"><?=@$arrtitle[5];?></h6>
                         <p class="reading-text"><?php echo substr($arrtext[5], 0, 229).'...'; ?>
                         </p>
-                        <p class="breadcrump">Читать дельше...</p>
+                        <p class="breadcrump">Читать дальше...</p>
                         </div>
                         <div class='overlay' style="top:51.5%;"> </div>
                     </a>

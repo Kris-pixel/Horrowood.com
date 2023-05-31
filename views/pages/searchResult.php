@@ -84,7 +84,7 @@ function SearchTable($table, $itemType, $search, $link){
                         <h6 class='link-article-title'>".$arrname[$i]."</h6>
                         <div class='reading-text'>$str
                         </div>
-                        <p class='breadcrump'>Читать дельше...</p>
+                        <p class='breadcrump'>Читать дальше...</p>
                         </div>
                     </a>
                 </div>";
