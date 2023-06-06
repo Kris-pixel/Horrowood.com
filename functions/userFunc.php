@@ -93,6 +93,8 @@ function GetRatingStat($link, $rat){
 function getTable($link, $listType, $rowcount, $itemType){
     $selectTextW = $itemType == 'f%' ? "просмотрено" : "прочитано";
     $selectTextS =  $itemType == 'f%' ? "смотрю" : "читаю";
+    $itemAction =  $itemType == 'f%' ? "filmItem" : "bookItem";
+
 
     $selectAmount =  $itemType == 'f%' ? "episode_amount" : "duration";
 
@@ -121,7 +123,7 @@ function getTable($link, $listType, $rowcount, $itemType){
         $result .=  "<tr class='data-row'>
         <td class='pr-2'>$index</td>
         <td>
-          <a href='http://horrowood.com/index.php?action=filmItem&id=$itemId[$i]'>$arrname[$i]</a>
+          <a href='http://horrowood.com/index.php?action=$itemAction&id=$itemId[$i]'>$arrname[$i]</a>
         </td>
         <td>
           <span class='user-mark'>$mark</span>
@@ -137,6 +139,7 @@ function getTable($link, $listType, $rowcount, $itemType){
         <form>
         <div class='list-div'>
             <label>Список:</label>
+            <div class='edit-item-select' style='width:180px;'>
             <select>
                 <option></option>
                 <option value='s'>$selectTextS</option>
@@ -144,6 +147,7 @@ function getTable($link, $listType, $rowcount, $itemType){
                 <option value='p'>запланировано</option>
                 <option value='t'>брошено</option>
             </select>
+            </div>
           </div>
         <div class='mark-div'>
           <label for='mark'>Оценка:</label>
@@ -154,7 +158,7 @@ function getTable($link, $listType, $rowcount, $itemType){
           <input class='input' type='number' id='wctd' name='wctd' min='0' max='$arrepisoddes[$i]' value='$arrwatched[$i]'>
           <label for='pwd'> из $arrepisoddes[$i]</label>
         </div>
-        <div>
+        <div class='form-right-side'>
         <a class='delete'>Удалить из списка</a>
         <input class='edit-submit bbutton list-button' type='button' value='Готово'>
         <input type='hidden' value='$recordId[$i]'></input>

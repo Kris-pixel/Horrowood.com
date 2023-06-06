@@ -30,7 +30,7 @@ $genres = GetItemGanresById($link, $id);
 $frames = GetItemFramesById($link, $id);
 
 $date = date_create($item['release_date']);
-$itemDate = date_format($date,'d-m-Y');
+$itemDate = date_format($date,'d.m.Y');
 ?>
 
 

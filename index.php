@@ -13,7 +13,10 @@
     <?php
         if($_GET['action'] == "bookItem" || $_GET['action'] == "filmItem"){
             echo "<link rel='stylesheet' href='css/listButton.css'>";
-        }else{
+        }elseif($_GET['action'] == "user"){
+            echo "<link rel='stylesheet' href='css/editItem.css'>";
+        }
+        else{
             echo " <link rel='stylesheet' href='css/customSelect.css'>";
         }
         if($_GET['action'] == "newItem"){

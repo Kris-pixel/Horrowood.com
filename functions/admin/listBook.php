@@ -1,12 +1,12 @@
 <?php
 require_once '../../connect/db.php';
 
-$query = "SELECT COUNT(*) FROM article";
+$query = "SELECT COUNT(*) FROM items WHERE id LIKE 'b-%'";
 $result = mysqli_query($link, $query);
 $r = mysqli_fetch_row($result);
 
 $numrows = $r[0];
-$rowsperpage = 30;
+$rowsperpage = 15;
 $totalpages = ceil($numrows / $rowsperpage);
 $page = 1;
 
@@ -31,14 +31,14 @@ $result = mysqli_query($link, $query);
 if (mysqli_num_rows($result) < 1) {
     echo "Ничего нет";
 }
-echo "<table class='mt-2'><thead>";
+echo "<table class='mt-2 admin-table'><thead>";
 echo "<tr>";
-echo "<th>ID</th>";
+echo "<th>#</th>";
 echo "<th>Название</th>";
 echo "<th>Тип</th>";
 echo "<th>Статус</th>";
 echo "<th>Автор</th>";
-echo "<th>Рейтинг</th>";
+echo "<th class='mr-3'>Рейтинг</th>";
 echo "<th>Дата добавления</th>";
 echo "<th>Действие</th>";
 echo "</tr>
@@ -47,6 +47,7 @@ echo "</tr>
         </tr> 
     </thead><tbody>";
 
+$index = 1;
 while ($row = mysqli_fetch_assoc($result)) {
     $id = $row['id'];
     $title = $row['title'];
@@ -54,12 +55,13 @@ while ($row = mysqli_fetch_assoc($result)) {
     $status = $row['status_name'];
     $author = $row['author'];
     $r = $row['rating'];
-    $time = $row['date_rec_creation'];
+    $date = date_create($row['date_rec_creation']);
+    $time = date_format($date,'h:m:s d.m.Y');
 
     ?>
 
     <tr>
-        <td><?=@$id;?></td>
+        <td><?=@$index;?></td>
         <td><a href="http://horrowood.com/index.php?action=bookItem&id=<?=@$id;?>"><?php echo substr($title, 0, 50); ?></a></td>
         <td><?=@$type;?></td>
         <td><?=@$status;?></td>
@@ -72,11 +74,12 @@ while ($row = mysqli_fetch_assoc($result)) {
     </tr>
 
     <?php
+    $index +=1;
 }
 echo "</tbody></table>";
 
 // pagination
-echo "<div class='mt-4 row px-3'>";
+echo "<div class='mt-4 pagination-div'>";
 if ($page > 1) {
     echo "<a class='pagination  pagination-active' href='http://horrowood.com/index.php?action=admin&tab=Book&page=1' class=''><<</a>";
     $prevpage = $page - 1;

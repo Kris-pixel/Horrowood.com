@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     $(document).on('click', '.edit', function(){
+
         $(this).text("Отмена").toggleClass("active");
         let show = $(this).attr('id');
         let listType = $(this).next().val();
@@ -10,7 +11,8 @@ $(document).ready(function(){
         $(".edit:not(#"+show+")").removeClass("active");
         $(".edit:not(.active)").text("Изменить");
 
-        $("#form"+show).children().children().children().children().children("option[value='"+listType+"']").attr("selected", "selected");
+        let plaholder = $("#form"+show).children().children().children().children().children().children("option[value='"+listType+"']").text();
+        $("#form"+show).children().children().children().children().children().next('.select-selected').prepend(plaholder);
       });
 
     let page = new URLSearchParams(location.href).get('page');
@@ -46,12 +48,35 @@ $(document).ready(function(){
             });
     });
     $(document).on('click', '.edit-submit', function(){
+      let newList='';
         let form = $(this).parent().parent();
         let recordId = $(this).next().val();
-        let newList = form.children().children("select").val();
+        let key= form.children().children().children('.select-items').children('.same-as-selected').text();
+        switch (key) {
+          case "прочитано":
+            newList='w';
+            break;
+            case "просмотрено":
+              newList='w';
+            break;
+            case "смотрю":
+              newList='s';
+            break;
+            case "читаю":
+              newList='s';
+            break;
+            case "запланировано":
+              newList='p';
+            break;
+            case "брошено":
+              newList='t';
+            break;
+        
+          default:
+            break;
+        }
         let newMark = form.children().children("input[name = 'mark']").val();
         let newAmount = form.children().children("input[name = 'wctd']").val();
-
         $.ajax({
             url:"../functions/userPage/editList.php",
             method:"POST",

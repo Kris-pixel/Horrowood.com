@@ -612,9 +612,6 @@ div.card.col-md-12 img, .ava{
 /* dropdown-filte */
 
 /* title page */
-.title{
-    outline: 1px solid #d803e7;
-}
 .reading-text{
     font-family: 'Corbel';
     font-size: 16px;
@@ -920,7 +917,7 @@ textarea.comment-text:active, textarea.comment-text:focus{
     
 }
 .stats.menu{
-    margin-top: 13vh;
+    margin-top: 7vh;
 }
 p.sm-2{
     display: none;
@@ -1160,7 +1157,19 @@ a{
 td a.del:hover{
 color: #ff3a3a;
 }
-
+.admin-table{
+    margin: 0;
+    width: 100%;
+}
+.admin-table tr:nth-child(2n){
+    background-color: #3C3C56;
+}
+.admin-table tr td{
+    padding: 5px 0px 5px 0px;
+}
+.admin-table tr td:nth-child(1),.admin-table tr th:nth-child(1){
+    padding-left: 10px;
+}
 
 
 
@@ -1301,27 +1310,39 @@ div.modal-div input{
     justify-content: space-between;
     align-items: center;
 }
-.editform td form div:last-child{
+.editform td form .form-right-side{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.editform td form div:last-child a{
+.editform td form div:last-child .delete{
     color: #FEB483;
 }
-.editform td form div:last-child a:hover{
+.editform td form div:last-child .delete:hover{
     color: #FEB483;
     text-decoration: line-through;
     cursor: pointer;
 }
-.editform td form div input, .editform td form div select{
+.editform td form div input 
+/* .editform td form div select */
+{
     background-color: #585874;
     border-radius: 20px;
     border: none;
+    vertical-align: baseline;
     padding: 5px 15px;
+    color: #99FF33;
 }
 .editform{
     display: none;
+  }
+  .list-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .list-div label{
+    margin-bottom: 0;
   }
   .show{
     display: table-row;
@@ -1331,6 +1352,12 @@ div.modal-div input{
     width: 97%;
   }
 
+  .pagination-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
   .pagination{
     display: flex;
     justify-content: center;

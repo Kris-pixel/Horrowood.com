@@ -27,31 +27,33 @@ $result = mysqli_query($link, $query);
 if (mysqli_num_rows($result) < 1) {
     echo "Ничего нет";
 }
-echo "<table class='mt-2'><thead>";
-echo "<tr class=''>";
-echo "<th>ID</th>";
+echo "<table class='mt-2 admin-table'><thead>";
+echo "<tr>";
+echo "<th>#</th>";
 echo "<th>Заголовок</th>";
 echo "<th>Рубрика</th>";
 echo "<th>Дата</th>";
-echo "<th>Действие</th>";
+echo "<th class='col-2 px-0'>Действие</th>";
 echo "</tr>
         <tr class='table-border'>
         <th colspan='5'></th>
         </tr> 
     </thead><tbody>";
 
+    $index = 1;
 while ($row = mysqli_fetch_assoc($result)) {
     $id = $row['id'];
     $title = $row['title'];
     $topic = $row['topic'];
     $author = $row['posted_by'];
-    $time = $row['created_at'];
+    $date = date_create($row['created_at']);
+    $time = date_format($date,'h:m:s d.m.Y');
 
     ?>
 
     <tr>
-        <td><?=@$id;?></td>
-        <td><a href="http://horrowood.com/index.php?action=article&id=<?=@$id;?>"><?php echo substr($title, 0, 50); ?></a></td>
+        <td><?=@$index;?></td>
+        <td><a href="http://horrowood.com/index.php?action=article&id=<?=@$id;?>"><?php echo $title; ?></a></td>
         <td><?php echo $topic; ?></td>
         <td><?php echo $time; ?></td>
         <td class="row m-0"><a class="mr-1" href="http://horrowood.com/index.php?action=editArticle&id=<?php echo $id; ?>">Редактировать</a> | 
@@ -60,11 +62,12 @@ while ($row = mysqli_fetch_assoc($result)) {
     </tr>
 
     <?php
+    $index +=1;
 }
 echo "</tbody></table>";
 
 // pagination
-echo "<div class='mt-4 row px-3'>";
+echo "<div class='mt-4 pagination-div'>";
 if ($page > 1) {
     echo "<a class='pagination  pagination-active' href='http://horrowood.com/index.php?action=admin&tab=Article&page=1' class=''><<</a>";
     $prevpage = $page - 1;

@@ -19,7 +19,8 @@ $topic = $row['topic'];
 $img = $row['img'];
 $description = $row['body'];
 $author = $row['login_user'];
-$time = $row['created_at'];
+$date = date_create($row['created_at']);
+$time = date_format($date,'h:m:s d.m.Y');
 
 $_SESSION['item_id'] = $id;
 

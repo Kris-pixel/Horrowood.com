@@ -92,3 +92,4 @@ if(session_status()!=PHP_SESSION_ACTIVE) session_start();
     </tbody>
   </table>
 </div>
+<script src="js/editItem.js"></script>

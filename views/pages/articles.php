@@ -49,7 +49,7 @@ if (mysqli_num_rows($result) < 1) {
                 <a class="catalog-article-link" href="http://horrowood.com/index.php?action=article&id=<?=@$arrid[0];?>">
                     <div class="big-article-img"><img class="col-md-12 p-0 twocorner-img mb-3" src="http://horrowood.com/img/db/article/<?=@$arrimg[0];?>" alt="<?=@$arrimg[0];?>" title="<?=@$arrimg[0];?>"></div>
                     <h4 class="link-article-title"><?=@$arrtitle[0];?></h4>
-                    <p class="reading-text"><?php echo substr($arrtext[0], 0, 229).'...'; ?>
+                    <p class="reading-text"><?php echo substr($arrtext[0], 0, 230).'...'; ?>
                     </p>
                     <p class="breadcrump">Читать дальше...</p>
                     <div class='overlay'> </div>
@@ -105,7 +105,7 @@ if (mysqli_num_rows($result) < 1) {
                         </div>
                         <div class="col-md-6">
                         <h6 class="link-article-title"><?=@$arrtitle[4];?></h6>
-                        <p class="reading-text"><?php echo substr($arrtext[4], 0, 229).'...'; ?>
+                        <p class="reading-text"><?php echo substr($arrtext[4], 0, 230).'...'; ?>
                         </p>
                         <p class="breadcrump">Читать дальше...</p>
                         </div>
@@ -120,7 +120,7 @@ if (mysqli_num_rows($result) < 1) {
                         </div>
                         <div class="col-md-6">
                         <h6 class="link-article-title"><?=@$arrtitle[5];?></h6>
-                        <p class="reading-text"><?php echo substr($arrtext[5], 0, 229).'...'; ?>
+                        <p class="reading-text"><?php echo substr($arrtext[5], 0, 230).'...'; ?>
                         </p>
                         <p class="breadcrump">Читать дальше...</p>
                         </div>
@@ -131,7 +131,7 @@ if (mysqli_num_rows($result) < 1) {
         </div>
 <?php
 
-echo "<div class='mt-4 row'>";
+echo "<div class='mt-4 pagination-div'>";
 
 if ($page > 1) {
     echo "<a class='pagination  pagination-active' href='http://horrowood.com/index.php?action=articles&page=1'>&laquo;</a>";
